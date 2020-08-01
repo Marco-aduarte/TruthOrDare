@@ -1,0 +1,51 @@
+@startuml
+
+package Android{
+    class Button
+    class Activity
+    class View
+}
+
+class ToDCtrl {
+   onCreate(:Bundle)
+
+}
+
+
+
+package View {
+
+
+
+    Class PlayersPage {
+
+    }
+
+    Class GamePage {
+
+    }
+
+}
+
+package Model{
+
+    class Players {
+    -name :String
+    -points :Int
+    +Players(name :String)
+    +getName() :String
+    +getPoints() :Int
+    +addPoint()
+    }
+
+    class Game{
+
+    }
+}
+
+Game o-- Players :players
+ToDCtrl<|-Activity
+ToDCtrl*----Game :model
+ToDCtrl*----PlayersPage :view
+
+@enduml
