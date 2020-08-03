@@ -9,9 +9,27 @@
     android:background="#212738">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="right">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@mipmap/settings"
+            app:backgroundTint="#FFFFFF"
+            app:fabSize="mini"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@mipmap/settings"
+            app:backgroundTint="#FFFFFF"
+            app:fabSize="mini"/>
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
@@ -20,8 +38,7 @@
             android:clickable="true"
             android:src="@mipmap/settings"
             app:backgroundTint="#FFFFFF"
-            android:layout_gravity="right"
-            />
+            app:fabSize="normal"/>
 
     </LinearLayout>
 
