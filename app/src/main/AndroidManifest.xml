@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Party_Game_Question"></activity>
-        <activity android:name=".Party_Game_Option" />
+        <activity android:name=".Game_Question"></activity>
+        <activity android:name=".Game_Option" />
         <activity android:name=".Players_Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>

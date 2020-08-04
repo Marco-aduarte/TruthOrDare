@@ -4,38 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Players_Activity extends Activity {
+public class Game_Option extends Activity {
 
     private final String file = "color.txt";
-    private Button begin;
+    private Button truth, dare;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_players);
+        setContentView(R.layout.activity_game_option);
         String color = loadColor();
-        ConstraintLayout view = findViewById(R.id.playersView);
+        ConstraintLayout view = findViewById(R.id.game_option_view);
         view.setBackgroundColor(Color.parseColor(color));
-        begin=findViewById(R.id.begin);
-        begin.setOnClickListener(v -> startGame());
+        truth=findViewById(R.id.truth);
+        dare=findViewById(R.id.dare);
 
-
-    }
-
-    private void startGame() {
-        Intent game = new Intent(this, Game_Option.class);
-        startActivity(game);
     }
 
     private String loadColor(){
