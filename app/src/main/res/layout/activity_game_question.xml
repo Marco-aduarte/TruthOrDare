@@ -4,97 +4,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
     android:id="@+id/game_question_view"
     tools:context=".Game_Question">
 
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="19.79dp"
+        android:layout_height="19.79dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="38dp"
         android:background="@mipmap/plus_4_512"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextRound"
-        app:layout_constraintVertical_bias="0.658" />
+        app:layout_constraintEnd_toStartOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forfeit Round"
-        android:textSize="15dp"
+        android:layout_width="93dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="39dp"
         android:fontFamily="@font/lato_bold"
+        android:text="Forfeit Round"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/nextRound"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/nextRound"
-        android:layout_width="297dp"
+        android:layout_width="0dp"
         android:layout_height="83dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="76dp"
         android:background="@drawable/black_button"
+        android:fontFamily="@font/lato_bold"
         android:text="Next Round"
         android:textAllCaps="false"
-        android:textSize="33dp"
         android:textColor="#FFFFFF"
+        android:textSize="33sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="336dp"
+        android:layout_width="350dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="223dp"
         android:fontFamily="@font/lato_bold"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/nextRound"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option"
-        app:layout_constraintVertical_bias="0.205" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/option"
-        android:layout_width="136dp"
-        android:layout_height="30dp"
+        android:layout_width="122dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="126dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="67dp"
         android:background="@drawable/back_and_settings_layout"
         android:foreground="@mipmap/back"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="38dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:foreground="@mipmap/settings"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="7dp"
         android:background="@drawable/button_settings"
-        tools:layout_editor_absoluteX="322dp"
-        tools:layout_editor_absoluteY="35dp" />
+        android:foreground="@mipmap/settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
