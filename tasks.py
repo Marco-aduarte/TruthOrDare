@@ -1,4 +1,4 @@
-import invoke
+from invoke import task
 
 @task
 def commit(c,message):
@@ -29,7 +29,7 @@ def push(c,branch):
         exit(0)
     c.run(f"git checkout {branch}")
     c.run("git push")
-
+#oI
 
 @task
 def chapada(c, branch):
