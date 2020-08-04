@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 
+public class MainActivity extends Activity {
     /*
 
     [0] [fgrt] [gewrgth]
@@ -20,6 +24,7 @@ public class MainActivity extends Activity {
      */
 
     private Button casual, party, dirty;
+    private final String file = "color.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +38,37 @@ public class MainActivity extends Activity {
         casual.setOnClickListener(v -> startCasual(v));
         party.setOnClickListener(v -> startParty(v));
         dirty.setOnClickListener(v -> startDirty(v));
+
     }
 
+    //TODO: Guardar a cor que temos que meter na view
+
     private void startDirty(View v) {
-        Intent dirty = new Intent(this, Dirty_Activity.class);
+        Intent dirty = new Intent(this, Players_Activity.class);
+        saveColor("#D1495B");
         startActivity(dirty);
     }
 
     private void startParty(View v) {
-        Intent party = new Intent(this, Party_Activity.class);
+        Intent party = new Intent(this, Players_Activity.class);
+        saveColor("#16DB93");
         startActivity(party);
     }
 
     private void startCasual(View v) {
-        Intent casual = new Intent(this, Casual_Activity.class);
+        Intent casual = new Intent(this, Players_Activity.class);
+        saveColor("#2E5EAA");
         startActivity(casual);
+    }
+
+    private void saveColor(String color) {
+        try (OutputStream os = openFileOutput(file,MODE_PRIVATE)){
+            PrintWriter to = new PrintWriter(os);
+            to.print(color);
+            to.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
