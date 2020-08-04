@@ -12,88 +12,84 @@
         android:layout_width="297dp"
         android:layout_height="83dp"
         android:background="@drawable/black_button"
-        android:text="Let's Begin"
+        android:text="Let's Begin!"
+        android:fontFamily="@font/lato_bold"
+        android:textSize="33dp"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="589dp" />
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="693dp" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:layout_width="241dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="183dp" />
+        tools:layout_editor_absoluteX="66.5dp"
+        tools:layout_editor_absoluteY="269dp"
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:layout_width="241dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="241dp" />
+        tools:layout_editor_absoluteX="66.5dp"
+        tools:layout_editor_absoluteY="334dp" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:layout_width="241dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="294dp" />
+        tools:layout_editor_absoluteX="66.5dp"
+        tools:layout_editor_absoluteY="399dp" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:layout_width="241dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="368dp" />
+        tools:layout_editor_absoluteX="66.5dp"
+        tools:layout_editor_absoluteY="464dp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
         android:background="@mipmap/x_mark_256"
-        tools:layout_editor_absoluteX="299dp"
-        tools:layout_editor_absoluteY="195dp" />
+        tools:layout_editor_absoluteX="287dp"
+        tools:layout_editor_absoluteY="279dp" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
         android:background="@mipmap/x_mark_256"
-        tools:layout_editor_absoluteX="299dp"
-        tools:layout_editor_absoluteY="250dp" />
+        tools:layout_editor_absoluteX="287dp"
+        tools:layout_editor_absoluteY="344dp" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
         android:background="@mipmap/x_mark_256"
-        tools:layout_editor_absoluteX="299dp"
-        tools:layout_editor_absoluteY="305dp" />
+        tools:layout_editor_absoluteX="287dp"
+        tools:layout_editor_absoluteY="409dp" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
         android:background="@mipmap/x_mark_256"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.705"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="383dp" />
+        tools:layout_editor_absoluteX="287dp"
+        tools:layout_editor_absoluteY="474dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

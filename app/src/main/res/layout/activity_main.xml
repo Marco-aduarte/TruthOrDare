@@ -21,13 +21,13 @@
         android:text="Truth or Dare"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="34dp"
+        android:textSize="33dp"
         app:layout_constraintBottom_toTopOf="@+id/casual"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/casual"

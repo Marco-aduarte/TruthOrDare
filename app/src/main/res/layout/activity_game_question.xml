@@ -10,31 +10,24 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="19.79dp"
+        android:layout_height="19.79dp"
         android:background="@mipmap/plus_4_512"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextRound"
-        app:layout_constraintVertical_bias="0.658" />
+        tools:layout_editor_absoluteX="130.11dp"
+        tools:layout_editor_absoluteY="754.11dp" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="15dp"
         android:text="Forfeit Round"
         android:textSize="15dp"
         android:fontFamily="@font/lato_bold"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/nextRound"
-        app:layout_constraintVertical_bias="0.653" />
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="758dp"
+         />
 
     <Button
         android:id="@+id/nextRound"
@@ -42,56 +35,48 @@
         android:layout_height="83dp"
         android:background="@drawable/black_button"
         android:text="Next Round"
+        android:fontFamily="@font/lato_bold"
         android:textAllCaps="false"
         android:textSize="33dp"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="653dp" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="336dp"
+        android:layout_width="350dp"
         android:layout_height="48dp"
         android:fontFamily="@font/lato_bold"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option"
-        app:layout_constraintVertical_bias="0.205" />
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="382dp"
 
     <TextView
         android:id="@+id/option"
-        android:layout_width="136dp"
-        android:layout_height="30dp"
+        android:layout_width="122dp"
+        android:layout_height="25dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="68dp" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="42dp"
+        android:layout_height="41dp"
         android:background="@drawable/back_and_settings_layout"
         android:foreground="@mipmap/back"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="38dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:foreground="@mipmap/settings"
         android:background="@drawable/button_settings"
         tools:layout_editor_absoluteX="322dp"
