@@ -2,8 +2,8 @@ from invoke import task
 
 @task
 def commit(c,message):
-    if not message:
-        print("Porra Félix tens de meter uma mensagem no commit...")
+    if len(message)<3:
+        print("Porra felix, tens de meter a messagem maior pha... e tao pequeno que me faz lembrar algo")
     else:
         c.run("git add .")
         c.run(f"git commit -am {message}")
