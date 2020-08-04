@@ -19,7 +19,7 @@ def pull(c,branch):
         c.run("git merge master")
         c.run("git checkout "+branch)
         c.run("git push")
-
+@task
 def push(c,branch):
     if not branch:
         print("Felix tens de meter o nome do teu branch...besta")
