@@ -101,4 +101,16 @@
     </ScrollView>
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/plus"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background=""
+        android:text="Add Player"
+        android:textColor="#FFFFFF" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

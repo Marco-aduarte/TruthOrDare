@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Players_Activity extends Activity {
@@ -23,6 +25,7 @@ public class Players_Activity extends Activity {
     private Button begin;
     private String mode;
     private LinearLayout layout = new LinearLayout(this);
+    private LinkedList<EditText> list = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,9 @@ public class Players_Activity extends Activity {
         init();
 
         //TODO: Adicionar editText de acordo com o selecionado no botão
+
+
+
         /*
         <LinearLayout
             editText
@@ -49,18 +55,31 @@ public class Players_Activity extends Activity {
     }
 
     private void init() {
-
+        EditText text = new EditText(this);
+        EditText text2 = new EditText(this);
+        list.add(text);
+        list.add(text2);
+        layout.addView(text);
+        layout.addView(text2);
     }
 
 
     private void addEditText(){
-
+        EditText newText = new EditText(this);
+        list.add(newText);
+        layout.addView(newText);
     }
 
     private void startGame() {
         Intent game = new Intent(this, Game_Option.class);
         game.putExtra(MainActivity.MODE, mode);
+        savePlayers();
         startActivity(game);
+    }
+
+    private void savePlayers() {
+        ArrayList<String> players = new ArrayList<>();
+        //TODO: guardar todos os nomes dos players que tem nome diferente de "Name"
     }
 
     private String loadColor(){
