@@ -44,7 +44,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="196dp"
-        android:layout_height="0dp"
+        android:layout_height="33dp"
         android:layout_marginBottom="83dp"
         android:fontFamily="@font/lato_bold"
         android:text="It's Someone!"
@@ -103,4 +103,16 @@
         android:foreground="@mipmap/settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/Imagemoji"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="53dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

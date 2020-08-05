@@ -12,12 +12,14 @@ import android.widget.ListView;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Players_Activity extends Activity {
     private final String file = "color.txt";
     private Button begin;
-    
+    private ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,20 @@ public class Players_Activity extends Activity {
         begin=findViewById(R.id.begin);
         begin.setOnClickListener(v -> startGame());
 
+        listView = findViewById(R.id.listView);
 
+        ArrayList<String> array = new ArrayList<>();
+
+        array.add("Name");
+        array.add("Name");
+        array.add("Name");
+        array.add("Name");
+
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, array);
+
+        listView.setAdapter(arrayAdapter);
+
+        
 
     }
 
