@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.app.truthordare.Model.Actions;
+import com.app.truthordare.Model.Phrases;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -48,6 +52,9 @@ public class Game_Question extends Activity {
         next.setOnClickListener(v -> nextRound(v));
 
     }
+
+
+    //forfeit round -> passa para o proximo player sem dar pontos, avança game_option
 
     private void nextRound(View v) {
         Intent question = new Intent(this,Game_Option.class);

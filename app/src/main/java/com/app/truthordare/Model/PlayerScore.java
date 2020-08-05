@@ -1,29 +1,29 @@
-package com.app.truthordare;
+package com.app.truthordare.Model;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class PlayerScore {
-    private Hashtable <String, Players> scoreBoard;
-    private ArrayList <Players> playersArray;
+    private Hashtable <String, Player> scoreBoard;
+    private ArrayList <Player> playersArray;
 
     public PlayerScore(){
         scoreBoard = new Hashtable<>();
         playersArray = new ArrayList<>();
     }
-    public void add_player(Players player){
+    public void add_player(Player player){
         scoreBoard.put(player.getName(), player);
         playersArray.add(player);
     }
-    public Players get_player(String player_name){
+    public Player get_player(String player_name){
         return scoreBoard.get(player_name);
     }
 
-    private boolean less(Players x, Players y){
+    private boolean less(Player x, Player y){
         return x.get_score() < y.get_score();
     }
 
-    public ArrayList<Players> sort_players() {
+    public ArrayList<Player> sort_players() {
         int len = playersArray.size();
         int max;
         for (int i = 0; i < len - 1; i++){
@@ -33,7 +33,7 @@ public class PlayerScore {
                     max = j;
             }
             if(less(playersArray.get(i), playersArray.get(max))) {
-                Players aux = playersArray.get(i);
+                Player aux = playersArray.get(i);
                 playersArray.set(i, playersArray.get(max));
                 playersArray.set(max, aux);
             }
