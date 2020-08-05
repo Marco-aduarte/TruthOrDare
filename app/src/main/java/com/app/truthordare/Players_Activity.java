@@ -20,19 +20,21 @@ import java.util.Scanner;
 public class Players_Activity extends Activity {
     private final String file = "color.txt";
     private Button begin;
-    private ListView listView;
+    private String mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players);
+        Intent intent = getIntent();
+        mode = intent.getStringExtra(MainActivity.MODE);
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.playersView);
         view.setBackgroundColor(Color.parseColor(color));
         begin=findViewById(R.id.begin);
         begin.setOnClickListener(v -> startGame());
 
-        listView = findViewById(R.id.listView);
+        /*listView = findViewById(R.id.listView);
 
         ArrayList<String> array = new ArrayList<>();
 
@@ -51,12 +53,13 @@ public class Players_Activity extends Activity {
                 
             }
         });
-
+*/
     }
 
 
     private void startGame() {
         Intent game = new Intent(this, Game_Option.class);
+        game.putExtra(MainActivity.MODE, mode);
         startActivity(game);
     }
 
