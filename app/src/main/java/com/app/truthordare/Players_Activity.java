@@ -22,28 +22,29 @@ import java.util.Scanner;
 
 public class Players_Activity extends Activity {
     private final String file = "color.txt";
-    private Button begin;
+    private Button begin, add;
     private String mode;
-    private LinearLayout layout = new LinearLayout(this);
+    private LinearLayout layout;
     private LinkedList<EditText> list = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players);
+        layout = new LinearLayout(this);
         Intent intent = getIntent();
         mode = intent.getStringExtra(MainActivity.MODE);
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.playersView);
         view.setBackgroundColor(Color.parseColor(color));
         begin=findViewById(R.id.begin);
+        add = findViewById(R.id.add);
         begin.setOnClickListener(v -> startGame());
 
         init();
+        //TODO: Adicionar editText de acordo com o botão
 
-        //TODO: Adicionar editText de acordo com o selecionado no botão
-
-
+        add.setOnClickListener(v -> addEditText());
 
         /*
         <LinearLayout
