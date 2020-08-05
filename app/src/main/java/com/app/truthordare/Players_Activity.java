@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class Players_Activity extends Activity {
     private final String file = "color.txt";
     private Button begin;
     private String mode;
+    private LinearLayout layout = new LinearLayout(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,28 +36,26 @@ public class Players_Activity extends Activity {
         begin=findViewById(R.id.begin);
         begin.setOnClickListener(v -> startGame());
 
-        /*listView = findViewById(R.id.listView);
+        init();
 
-        ArrayList<String> array = new ArrayList<>();
+        //TODO: Adicionar editText de acordo com o selecionado no botão
+        /*
+        <LinearLayout
+            editText
+            editText
 
-        array.add("Name");
-        array.add("Name");
-        array.add("Name");
-        array.add("Name");
-
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, array);
-
-        listView.setAdapter(arrayAdapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                
-            }
-        });
-*/
+        </LinearLayout>
+         */
     }
 
+    private void init() {
+
+    }
+
+
+    private void addEditText(){
+
+    }
 
     private void startGame() {
         Intent game = new Intent(this, Game_Option.class);

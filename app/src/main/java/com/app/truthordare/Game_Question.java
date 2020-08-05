@@ -49,6 +49,9 @@ public class Game_Question extends Activity {
 
     }
 
+
+    //forfeit round -> passa para o proximo player sem dar pontos, avança game_option
+
     private void nextRound(View v) {
         Intent question = new Intent(this,Game_Option.class);
         question.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
