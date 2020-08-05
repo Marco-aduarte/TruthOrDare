@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+//TODO: Fazer layout
 public class GameRecords extends AppCompatActivity {
 
     @Override

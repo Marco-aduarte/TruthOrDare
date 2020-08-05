@@ -94,5 +94,4 @@ public class Players_Activity extends Activity {
         }
         return color;
     }
-
 }
