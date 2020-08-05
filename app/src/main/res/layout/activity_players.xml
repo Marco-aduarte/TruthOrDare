@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playersView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardview_dark_background"
-    android:id="@+id/playersView"
     tools:context=".Players_Activity">
 
     <Button
@@ -24,95 +24,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="241dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="269dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="241dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="@+id/editText1"
-        app:layout_constraintStart_toStartOf="@+id/editText1"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="241dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="241dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
-        app:layout_constraintStart_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@mipmap/x_mark_256"
-        app:layout_constraintEnd_toEndOf="@+id/editText1"
-        app:layout_constraintTop_toTopOf="@+id/editText1" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@mipmap/x_mark_256"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintTop_toTopOf="@+id/editText2" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@mipmap/x_mark_256"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText3" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@mipmap/x_mark_256"
-        app:layout_constraintEnd_toEndOf="@+id/editText4"
-        app:layout_constraintTop_toTopOf="@+id/editText4" />
 
     <Button
         android:id="@+id/button7"
@@ -154,5 +65,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:src="@tools:sample/avatars" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="71dp"
+        android:clickable="true"
+        android:src="@drawable/back_and_settings_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="374dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="128dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
