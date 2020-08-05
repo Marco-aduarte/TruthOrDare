@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,9 +23,10 @@ import java.util.Scanner;
 
 public class Players_Activity extends Activity {
     private final String file = "color.txt";
-    private Button begin, add;
+    private Button begin, add, add2;
     private String mode;
     private LinearLayout layout;
+    private ScrollView scroll;
     private LinkedList<EditText> list = new LinkedList<>();
 
     @Override
@@ -32,6 +34,7 @@ public class Players_Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players);
         layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
         Intent intent = getIntent();
         mode = intent.getStringExtra(MainActivity.MODE);
         String color = loadColor();
@@ -39,13 +42,15 @@ public class Players_Activity extends Activity {
         view.setBackgroundColor(Color.parseColor(color));
         begin=findViewById(R.id.begin);
         add = findViewById(R.id.add);
+        add2 = findViewById(R.id.add2);
+        scroll=findViewById(R.id.players);
         begin.setOnClickListener(v -> startGame());
 
         init();
-        //TODO: Adicionar editText de acordo com o botão
+        //TODO: Adicionar editText quando o botão é acionado
 
         add.setOnClickListener(v -> addEditText());
-
+        add2.setOnClickListener(v -> addEditText());
         /*
         <LinearLayout
             editText
@@ -62,8 +67,9 @@ public class Players_Activity extends Activity {
         list.add(text2);
         layout.addView(text);
         layout.addView(text2);
+        scroll.addView(layout);
+        scroll.invalidate();
     }
-
 
     private void addEditText(){
         EditText newText = new EditText(this);
