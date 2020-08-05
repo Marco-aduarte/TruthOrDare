@@ -1,25 +1,23 @@
 package com.app.truthordare;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Players_Activity extends Activity {
-
     private final String file = "color.txt";
     private Button begin;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +29,9 @@ public class Players_Activity extends Activity {
         begin.setOnClickListener(v -> startGame());
 
 
+
     }
+
 
     private void startGame() {
         Intent game = new Intent(this, Game_Option.class);
