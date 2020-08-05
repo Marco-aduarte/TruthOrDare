@@ -13,26 +13,31 @@
         android:id="@+id/Imagemoji_question"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="68dp"
-        app:layout_constraintBottom_toTopOf="@+id/question"
+        android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option"
         tools:src="@tools:sample/avatars" />
+
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="19.79dp"
-        android:layout_height="19.79dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="38dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="37dp"
         android:background="@mipmap/plus_4_512"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView5" />
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+
+
+        />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="93dp"
-        android:layout_height="15dp"
+        android:layout_height="17dp"
         android:layout_marginStart="155dp"
         android:layout_marginEnd="130dp"
         android:layout_marginBottom="39dp"
@@ -43,6 +48,7 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.696"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -65,24 +71,22 @@
     <TextView
         android:id="@+id/question"
         android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="223dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
         android:fontFamily="@font/lato_bold"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/nextRound"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Imagemoji_question" />
 
     <TextView
         android:id="@+id/option"
-        android:layout_width="122dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
-        android:layout_marginStart="127dp"
         android:layout_marginTop="68dp"
-        android:layout_marginEnd="126dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
