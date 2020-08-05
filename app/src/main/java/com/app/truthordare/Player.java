@@ -1,10 +1,10 @@
 package com.app.truthordare;
 
-public class Players {
+public class Player {
     private int score = 0;
     private String name;
 
-    public Players(String name){
+    public Player(String name){
         this.name = name;
     }
 

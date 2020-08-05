@@ -78,6 +78,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
+        android:id="@+id/players"
         android:layout_width="409dp"
         android:layout_height="374dp"
         tools:layout_editor_absoluteX="1dp"
