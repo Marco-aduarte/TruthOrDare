@@ -1,4 +1,4 @@
-package com.app.truthordare;
+package com.app.truthordare.Model;
 
 import java.util.ArrayList;
 import java.util.Random;

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -16,29 +17,35 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Players_Activity extends Activity {
     private final String file = "color.txt";
-    private Button begin;
+    private Button begin, add;
     private String mode;
-    private LinearLayout layout = new LinearLayout(this);
+    private LinearLayout layout;
+    private LinkedList<EditText> list = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players);
+        layout = new LinearLayout(this);
         Intent intent = getIntent();
         mode = intent.getStringExtra(MainActivity.MODE);
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.playersView);
         view.setBackgroundColor(Color.parseColor(color));
         begin=findViewById(R.id.begin);
+        add = findViewById(R.id.add);
         begin.setOnClickListener(v -> startGame());
 
         init();
+        //TODO: Adicionar editText de acordo com o botão
 
-        //TODO: Adicionar editText de acordo com o selecionado no botão
+        add.setOnClickListener(v -> addEditText());
+
         /*
         <LinearLayout
             editText
@@ -49,18 +56,31 @@ public class Players_Activity extends Activity {
     }
 
     private void init() {
-
+        EditText text = new EditText(this);
+        EditText text2 = new EditText(this);
+        list.add(text);
+        list.add(text2);
+        layout.addView(text);
+        layout.addView(text2);
     }
 
 
     private void addEditText(){
-
+        EditText newText = new EditText(this);
+        list.add(newText);
+        layout.addView(newText);
     }
 
     private void startGame() {
         Intent game = new Intent(this, Game_Option.class);
         game.putExtra(MainActivity.MODE, mode);
+        savePlayers();
         startActivity(game);
+    }
+
+    private void savePlayers() {
+        ArrayList<String> players = new ArrayList<>();
+        //TODO: guardar todos os nomes dos players que tem nome diferente de "Name"
     }
 
     private String loadColor(){

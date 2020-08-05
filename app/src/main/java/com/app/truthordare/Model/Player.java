@@ -1,4 +1,4 @@
-package com.app.truthordare;
+package com.app.truthordare.Model;
 
 public class Player {
     private int score = 0;

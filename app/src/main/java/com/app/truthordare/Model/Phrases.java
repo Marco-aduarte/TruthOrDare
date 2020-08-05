@@ -1,4 +1,4 @@
-package com.app.truthordare;
+package com.app.truthordare.Model;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
