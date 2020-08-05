@@ -47,17 +47,10 @@ public class Players_Activity extends Activity {
         begin.setOnClickListener(v -> startGame());
 
         init();
-        //TODO: Adicionar editText quando o botão é acionado
+        //TODO: criar editTexts que começam com Name
 
         add.setOnClickListener(v -> addEditText());
         add2.setOnClickListener(v -> addEditText());
-        /*
-        <LinearLayout
-            editText
-            editText
-
-        </LinearLayout>
-         */
     }
 
     private void init() {
