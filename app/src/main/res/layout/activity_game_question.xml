@@ -10,11 +10,11 @@
 
 
     <ImageView
-        android:id="@+id/Imagemoji"
+        android:id="@+id/Imagemoji_question"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginBottom="68dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/question"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:src="@tools:sample/avatars" />
@@ -63,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/question"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginBottom="223dp"
@@ -79,7 +79,7 @@
     <TextView
         android:id="@+id/option"
         android:layout_width="122dp"
-        android:layout_height="25dp"
+        android:layout_height="45dp"
         android:layout_marginStart="127dp"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="126dp"

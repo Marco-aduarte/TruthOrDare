@@ -105,7 +105,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
-        android:id="@+id/Imagemoji"
+        android:id="@+id/Imagemoji_option"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="153dp"

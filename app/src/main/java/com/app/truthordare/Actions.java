@@ -29,7 +29,7 @@ public class Actions{
         }
         int rand = -1;
         while(rand < 0 || rand > (actualTruth.size() - 1))
-            rand = actualTruth.size() == 1 ? 0 : random(0,actualDare.size());
+            rand = actualTruth.size() == 1 ? 0 : random(0,actualTruth.size());
         String phrase = actualTruth.get(rand);
         actualTruth.remove(rand);
         usedTruth.add(phrase);
