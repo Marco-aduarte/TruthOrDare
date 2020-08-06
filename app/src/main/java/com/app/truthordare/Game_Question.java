@@ -1,10 +1,13 @@
 package com.app.truthordare;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,11 +32,12 @@ public class Game_Question extends Activity {
     private final String file = "color.txt";
     private String mode=null, option;
     private TextView txt, title;
-    private Button next, add, add2;
+    private Button next, add, add2, drink;
     private ImageView image;
     private PlayerScore playerScore;
     private Parcelable parcelable;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +58,7 @@ public class Game_Question extends Activity {
         image=findViewById(R.id.Imagemoji_question);
         add = findViewById(R.id.addQuestion);
         add2 = findViewById(R.id.add2Question);
+        drink = findViewById(R.id.drinkButton);
 
         Phrases phrases = new Phrases();
         Actions actions=null;
@@ -66,10 +71,28 @@ public class Game_Question extends Activity {
         txt.setText(getQuestion(actions));
         title.setText("It's a "+option+"!");
 
-        //TODO: PRECISO DO CURRENT PLAYER!!
-        next.setOnClickListener(v -> {nextRound();});
+        //TODO: Fazer debug no nextRound (get_current_player)
+        next.setOnClickListener(v -> {playerScore.get_current_player().add_score();nextRound();});
         add.setOnClickListener(v -> forfeitRound());
         add2.setOnClickListener(v -> forfeitRound());
+
+        drink.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    nextRound();
+                    return false; //vai para a próxima página
+                }
+                return true;
+            }
+        });
+        drink.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                nextRound();
+                return true;
+            }
+        });
 
 
 

@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-//TODO: Adicionar rondas
+//TODO: Adicionar rondas, toast para quando a lista de players tá vazia
 public class Players_Activity extends Activity {
     private final String file = "color.txt";
     public static final String PLAYER = "com.app.truthordare.PLAYER", ARRAY = "com.app.truthordare.ARRAY";
