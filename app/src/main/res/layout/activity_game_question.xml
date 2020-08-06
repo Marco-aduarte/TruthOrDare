@@ -118,11 +118,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <pl.droidsonroids.gif.GifImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gifButton"
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="396dp" />
 
     <Button
         android:id="@+id/drinkButton"
