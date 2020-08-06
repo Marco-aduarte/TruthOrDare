@@ -110,11 +110,11 @@
         android:layout_height="19dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="129dp"
+        android:textAllCaps="false"
         android:background="@android:color/transparent"
         android:text="Add Player"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/players"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintTop_toBottomOf="@+id/players" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
