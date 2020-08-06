@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,7 +29,7 @@ public class Game_Question extends Activity {
     private final String file = "color.txt";
     private String mode=null, option;
     private TextView txt, title;
-    private Button next;
+    private Button next, add, add2;
     private ImageView image;
     private PlayerScore playerScore;
     private Parcelable parcelable;
@@ -53,6 +52,8 @@ public class Game_Question extends Activity {
         title = findViewById(R.id.option);
         next=findViewById(R.id.nextRound);
         image=findViewById(R.id.Imagemoji_question);
+        add = findViewById(R.id.addQuestion);
+        add2 = findViewById(R.id.add2Question);
 
         Phrases phrases = new Phrases();
         Actions actions=null;
@@ -65,15 +66,22 @@ public class Game_Question extends Activity {
         txt.setText(getQuestion(actions));
         title.setText("It's a "+option+"!");
 
-        next.setOnClickListener(v -> nextRound(v));
+        //TODO: PRECISO DO CURRENT PLAYER!!
+        next.setOnClickListener(v -> {nextRound();});
+        add.setOnClickListener(v -> forfeitRound());
+        add2.setOnClickListener(v -> forfeitRound());
+
+
 
     }
 
 
     //TODO: forfeit round -> passa para o proximo player sem dar pontos, avança game_option
+    private void forfeitRound() {
+        nextRound();
+    }
 
-    //adiciona +1 ao score e vai para o game_option
-    private void nextRound(View v) {
+    private void nextRound() {
         Intent question = new Intent(this,Game_Option.class);
         question.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
         question.putExtra(Players_Activity.PLAYER, parcelable);
