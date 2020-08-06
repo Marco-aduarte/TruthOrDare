@@ -58,7 +58,7 @@ public class Players_Activity extends Activity {
         EditText text2 = new EditText(this);
         list.add(text);
         list.add(text2);
-        text.setH
+        text.setHint("Name");
         layout.addView(text);
         layout.addView(text2);
         scroll.addView(layout);
