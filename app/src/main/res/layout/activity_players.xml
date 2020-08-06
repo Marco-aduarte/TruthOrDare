@@ -81,8 +81,10 @@
     <ScrollView
         android:id="@+id/players"
         android:layout_width="241dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="19dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/floatingActionButton">
@@ -104,7 +106,7 @@
         android:layout_width="96dp"
         android:layout_height="19dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="129dp"
+        android:layout_marginEnd="135dp"
         android:background="@android:color/transparent"
         android:text="Add Player"
         android:textColor="#FFFFFF"

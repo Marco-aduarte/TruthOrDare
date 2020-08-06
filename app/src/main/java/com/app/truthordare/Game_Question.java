@@ -1,16 +1,22 @@
 package com.app.truthordare;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.app.truthordare.Model.Actions;
 import com.app.truthordare.Model.Phrases;
+import com.app.truthordare.Model.PlayerScore;
+
+import org.parceler.Parcels;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,12 +31,19 @@ public class Game_Question extends Activity {
     private String mode=null, option;
     private TextView txt, title;
     private Button next;
+    private ImageView image;
+    private PlayerScore playerScore;
+    private Parcelable parcelable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_question);
+
         Intent intent = getIntent();
+        parcelable = intent.getParcelableExtra(Players_Activity.PLAYER);
+        playerScore = Parcels.unwrap(parcelable);
+        playerScore.setArray(intent.getParcelableArrayListExtra(Players_Activity.ARRAY));
         mode = intent.getStringExtra(MainActivity.MODE);
         option = intent.getStringExtra(Game_Option.OPTION);
         String color = loadColor();
@@ -39,10 +52,13 @@ public class Game_Question extends Activity {
         txt = findViewById(R.id.question);
         title = findViewById(R.id.option);
         next=findViewById(R.id.nextRound);
+        image=findViewById(R.id.Imagemoji_question);
+
         Phrases phrases = new Phrases();
         Actions actions=null;
         try {
             actions = new Actions(((ArrayList<String>) getArray(phrases, "truth")), ((ArrayList<String>) getArray(phrases, "dare")), (ArrayList<Integer>) getEmojisArray(phrases));
+            image.setImageResource(actions.get_emoji());
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
@@ -56,9 +72,12 @@ public class Game_Question extends Activity {
 
     //TODO: forfeit round -> passa para o proximo player sem dar pontos, avança game_option
 
+    //adiciona +1 ao score e vai para o game_option
     private void nextRound(View v) {
         Intent question = new Intent(this,Game_Option.class);
         question.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
+        question.putExtra(Players_Activity.PLAYER, parcelable);
+        question.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
         startActivity(question);
     }
 

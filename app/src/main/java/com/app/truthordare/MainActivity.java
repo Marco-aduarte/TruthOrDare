@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
     private void startDirty(View v) {
         Intent dirty = new Intent(this, Players_Activity.class);
         saveColor("#D1495B");
-        dirty.putExtra(MODE,"dirty");
+        dirty.putExtra(MODE,"dirty1");
         startActivity(dirty);
     }
 
