@@ -1,18 +1,43 @@
 package com.app.truthordare.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import java.util.ArrayList;
-import java.util.Hashtable;
 
-public class PlayerScore {
-    private ArrayList <Player> playersArray;
-    private int current_player = 0;
-    private int rounds;
-    private int current_round = 1;
+@org.parceler.Parcel
+public class PlayerScore implements Parcelable {
+    ArrayList <Player> playersArray=null;
+    int current_player = 0;
+    int rounds;
+    int current_round = 1;
+
+    public PlayerScore(){
+    }
 
     public PlayerScore(int rounds){
         playersArray = new ArrayList<>();
         this.rounds = rounds;
     }
+
+
+    protected PlayerScore(Parcel in) {
+        current_player = in.readInt();
+        rounds = in.readInt();
+        current_round = in.readInt();
+    }
+
+    public static final Creator<PlayerScore> CREATOR = new Creator<PlayerScore>() {
+        @Override
+        public PlayerScore createFromParcel(Parcel in) {
+            return new PlayerScore(in);
+        }
+
+        @Override
+        public PlayerScore[] newArray(int size) {
+            return new PlayerScore[size];
+        }
+    };
+
     private void add_player(Player player){
         playersArray.add(player);
     }
@@ -57,4 +82,25 @@ public class PlayerScore {
         }
         return playersArray;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(current_player);
+        dest.writeInt(rounds);
+        dest.writeInt(current_round);
+    }
+
+    public ArrayList<Player> getArray() {
+        return playersArray;
+    }
+
+    public void setArray(ArrayList<Player> array){
+        this.playersArray=array;
+    }
+
 }
