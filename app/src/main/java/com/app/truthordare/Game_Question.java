@@ -29,7 +29,7 @@ public class Game_Question extends Activity {
     private final String file = "color.txt";
     private String mode=null, option;
     private TextView txt, title;
-    private Button next;
+    private Button next, add, add2;
     private ImageView image;
     private PlayerScore playerScore;
     private Parcelable parcelable;
@@ -52,6 +52,8 @@ public class Game_Question extends Activity {
         title = findViewById(R.id.option);
         next=findViewById(R.id.nextRound);
         image=findViewById(R.id.Imagemoji_question);
+        add = findViewById(R.id.addQuestion);
+        add2 = findViewById(R.id.add2Question);
 
         Phrases phrases = new Phrases();
         Actions actions=null;
@@ -66,6 +68,10 @@ public class Game_Question extends Activity {
 
         //TODO: PRECISO DO CURRENT PLAYER!!
         next.setOnClickListener(v -> {nextRound();});
+        add.setOnClickListener(v -> forfeitRound());
+        add2.setOnClickListener(v -> forfeitRound());
+
+
 
     }
 
