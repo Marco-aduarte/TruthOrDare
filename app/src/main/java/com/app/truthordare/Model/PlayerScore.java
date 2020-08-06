@@ -57,6 +57,8 @@ public class PlayerScore implements Parcelable {
         return playersArray.get(current_player++);
     }
 
+    public Player get_current_player(){return playersArray.get(current_player);}
+
     public int get_round(){
         return current_round;
     }
