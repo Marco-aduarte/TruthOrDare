@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.truthordare.Model.Actions;
@@ -25,24 +26,30 @@ public class Game_Question extends Activity {
     private String mode=null, option;
     private TextView txt, title;
     private Button next;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_question);
+
         Intent intent = getIntent();
         mode = intent.getStringExtra(MainActivity.MODE);
         option = intent.getStringExtra(Game_Option.OPTION);
+
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.game_question_view);
         view.setBackgroundColor(Color.parseColor(color));
         txt = findViewById(R.id.question);
         title = findViewById(R.id.option);
         next=findViewById(R.id.nextRound);
+        image=findViewById(R.id.Imagemoji_question);
+
         Phrases phrases = new Phrases();
         Actions actions=null;
         try {
             actions = new Actions(((ArrayList<String>) getArray(phrases, "truth")), ((ArrayList<String>) getArray(phrases, "dare")), (ArrayList<Integer>) getEmojisArray(phrases));
+            image.setImageResource(actions.get_emoji());
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
