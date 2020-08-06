@@ -3,6 +3,7 @@ package com.app.truthordare;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.widget.Button;
@@ -70,7 +71,15 @@ public class Players_Activity extends Activity {
         EditText text = new EditText(this);
         EditText text2 = new EditText(this);
         text.setHint("Name");
+        text.setTextColor(Color.WHITE);
+        text.setTextSize(25);
+        text.setHintTextColor(Color.WHITE);
+        text.setTypeface(Typeface.create("Lato",Typeface.BOLD));
         text2.setHint("Name");
+        text2.setTextColor(Color.WHITE);
+        text2.setTextSize(25);
+        text2.setHintTextColor(Color.WHITE);
+        text2.setTypeface(Typeface.create("Lato",Typeface.BOLD));
         list.add(text);
         list.add(text2);
         layout.addView(text);
@@ -82,6 +91,10 @@ public class Players_Activity extends Activity {
     private void addEditText(){
         EditText newText = new EditText(this);
         newText.setHint("Name");
+        newText.setHintTextColor(Color.WHITE);
+        newText.setTypeface(Typeface.create("Lato",Typeface.BOLD));
+        newText.setTextColor(Color.WHITE);
+        newText.setTextSize(25);
         list.add(newText);
         layout.addView(newText);
     }
