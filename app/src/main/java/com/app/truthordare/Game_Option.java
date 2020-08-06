@@ -56,7 +56,7 @@ public class Game_Option extends Activity {
         add=findViewById(R.id.addOption);
         Button add2 = findViewById(R.id.add2Option);
 
-        player.setText("It's "+playerScore.next_Player().getName()+"!");
+        updatePlayerView();
 
         Phrases phrases = new Phrases();
         Actions actions;
@@ -73,10 +73,12 @@ public class Game_Option extends Activity {
         add2.setOnClickListener(v -> forfeitRound());
     }
 
-    //TODO: passar à frente
+    //TODO: forfeit round -> passa para o proximo player sem dar pontos, avança game_option
     private void forfeitRound() {
-
+        updatePlayerView();
     }
+
+    private void updatePlayerView() { player.setText("It's "+playerScore.next_Player().getName()+"!"); }
 
     private void startGameQuestion(View v, String option) {
         Intent question = new Intent(this,Game_Question.class);
