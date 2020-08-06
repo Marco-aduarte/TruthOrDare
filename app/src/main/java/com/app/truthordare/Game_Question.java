@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -65,15 +64,18 @@ public class Game_Question extends Activity {
         txt.setText(getQuestion(actions));
         title.setText("It's a "+option+"!");
 
-        next.setOnClickListener(v -> nextRound(v));
+        //TODO: PRECISO DO CURRENT PLAYER!!
+        next.setOnClickListener(v -> {nextRound();});
 
     }
 
 
     //TODO: forfeit round -> passa para o proximo player sem dar pontos, avança game_option
+    private void forfeitRound() {
+        nextRound();
+    }
 
-    //adiciona +1 ao score e vai para o game_option
-    private void nextRound(View v) {
+    private void nextRound() {
         Intent question = new Intent(this,Game_Option.class);
         question.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
         question.putExtra(Players_Activity.PLAYER, parcelable);
