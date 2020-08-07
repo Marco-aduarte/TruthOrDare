@@ -119,20 +119,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <pl.droidsonroids.gif.GifImageButton
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        tools:layout_editor_absoluteX="242dp"
-        tools:layout_editor_absoluteY="396dp" />
-
-    <Button
+    <ImageButton
         android:id="@+id/drinkButton"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:layout_marginBottom="28dp"
-        android:text="Button"
+        android:background="@drawable/frame_00"
         app:layout_constraintBottom_toTopOf="@+id/nextRound"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
