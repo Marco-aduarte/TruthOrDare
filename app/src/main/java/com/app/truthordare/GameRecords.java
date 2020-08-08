@@ -26,6 +26,7 @@ public class GameRecords extends AppCompatActivity {
     private final String file = "color.txt";
     private String mode=null;
     private PlayerScore playerScore;
+    private ConstraintLayout view;
     private Parcelable parcelable;
 
     @Override
@@ -40,7 +41,7 @@ public class GameRecords extends AppCompatActivity {
         mode = intent.getStringExtra(MainActivity.MODE);
 
         String color = loadColor();
-        ConstraintLayout view = findViewById(R.id.game_records_view);
+        view = findViewById(R.id.game_records_view);
         view.setBackgroundColor(Color.parseColor(color));
 
         //lista de players. ver o size e adicionar tantos quanto o size
@@ -59,13 +60,29 @@ public class GameRecords extends AppCompatActivity {
         int position = 1;
         Drawable drawable = getDrawable(R.drawable.records_style);
         for (Player p : list){
-            TextView number = new TextView(this), name= new TextView(this), points= new TextView(this);;
-            number.invalidateDrawable(drawable);
-            name.invalidateDrawable(drawable);
-            number.setText(new StringBuilder().append(++position).append("º").toString());
-            name.setText(p.getName());
-            points.setText(p.get_score());
+            TextView number = new TextView(this), name= new TextView(this), points= new TextView(this);
+            createNumber(number, position, drawable);
+            createName(name, drawable, p.getName());
+            createPoints(points ,drawable, p.get_score());
         }
+    }
+
+    private void createPoints(TextView txt, Drawable drawable, String score) {
+        txt.invalidateDrawable(drawable);
+        txt.setText(score);
+        view.addView(txt, txt.getLayoutParams());
+    }
+
+    private void createName(TextView txt, Drawable drawable, String name) {
+        txt.invalidateDrawable(drawable);
+        txt.setText(name);
+        view.addView(txt, txt.getLayoutParams());
+    }
+
+    private void createNumber(TextView txt, int position, Drawable drawable) {
+        txt.invalidateDrawable(drawable);
+        txt.setText(new StringBuilder().append(++position).append("º").toString());
+        view.addView(txt, txt.getLayoutParams());
     }
 
 
