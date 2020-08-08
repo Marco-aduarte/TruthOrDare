@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.text.InputFilter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.app.truthordare.Model.PlayerScore;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.parceler.Parcels;
 
@@ -28,13 +30,14 @@ import java.util.Scanner;
 public class Players_Activity extends Activity {
     private final String file = "color.txt";
     public static final String PLAYER = "com.app.truthordare.PLAYER", ARRAY = "com.app.truthordare.ARRAY";
-    private Button begin, add, add2;
+    private Button begin, add, add2, back;
     private String mode;
     private LinearLayout layout;
     private ScrollView scroll;
     private LinkedList<EditText> list = new LinkedList<>();
     private PlayerScore playerScore;
     private Parcelable parcelable;
+    private FloatingActionButton f1,f2;
 
 
     @Override
@@ -52,9 +55,11 @@ public class Players_Activity extends Activity {
         add = findViewById(R.id.add);
         add2 = findViewById(R.id.add2);
         scroll=findViewById(R.id.players);
+        back = findViewById(R.id.back_players);
 
         //TODO: Mudar o parâmetro
-        playerScore = new PlayerScore(3);
+        //TODO: Mudar o codigo do PlayScore para admitir rondas infinitas
+        playerScore = new PlayerScore(50);
         parcelable = Parcels.wrap(playerScore);
 
         begin.setOnClickListener(v -> startGame());
@@ -66,18 +71,29 @@ public class Players_Activity extends Activity {
 
         add.setOnClickListener(v -> addEditText());
         add2.setOnClickListener(v -> addEditText());
+        back.setOnClickListener(v -> goBack());
+    }
+
+    private void goBack() {
+        Intent main = new Intent(this, MainActivity.class);
+        startActivity(main);
     }
 
     private void init() {
+        int maxLength = 12;
         EditText text = new EditText(this);
         EditText text2 = new EditText(this);
         text.setHint("Name");
         text.setTextColor(Color.WHITE);
+        text.setMaxLines(1);
+        text.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
         text.setTextSize(25);
         text.setHintTextColor(Color.WHITE);
         text.setTypeface(Typeface.create("Lato",Typeface.BOLD));
         text2.setHint("Name");
         text2.setTextColor(Color.WHITE);
+        text2.setMaxLines(1);
+        text2.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
         text2.setTextSize(25);
         text2.setHintTextColor(Color.WHITE);
         text2.setTypeface(Typeface.create("Lato",Typeface.BOLD));
@@ -90,37 +106,41 @@ public class Players_Activity extends Activity {
     }
 
     private void addEditText(){
+        int maxLength = 12;
         EditText newText = new EditText(this);
         newText.setHint("Name");
         newText.setHintTextColor(Color.WHITE);
         newText.setTypeface(Typeface.create("Lato",Typeface.BOLD));
         newText.setTextColor(Color.WHITE);
         newText.setTextSize(25);
+        newText.setMaxLines(1);
+        newText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
         list.add(newText);
         layout.addView(newText);
     }
 
     private void startGame() {
+        if(!savePlayers()) return;
         Intent game = new Intent(this, Game_Option.class);
         game.putExtra(MainActivity.MODE, mode);
-        savePlayers();
         game.putExtra(PLAYER,parcelable);
         game.putParcelableArrayListExtra(ARRAY,playerScore.getArray());
         startActivity(game);
     }
 
-    private void savePlayers() {
-        if(list.size()==0){
-            Toast.makeText(this,"Nenhum nome atribuido",Toast.LENGTH_LONG);
-            return;
-        }
+    private boolean savePlayers() {
         ArrayList<String> names = new ArrayList<>();
         for( EditText text : list ) {
             String name = String.valueOf(text.getText());
             if (!name.equals(""))
                 names.add(name);
         }
+        if(playerScore.isEmpty(names)){
+            Toast.makeText(this,"Add Player",Toast.LENGTH_SHORT).show();
+            return false;
+        }
         playerScore.add_all_players(names);
+        return true;
     }
 
     private String loadColor(){
