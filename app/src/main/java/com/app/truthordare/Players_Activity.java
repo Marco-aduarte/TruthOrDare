@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -109,8 +110,11 @@ public class Players_Activity extends Activity {
     }
 
     private void savePlayers() {
+        if(list.size()==0){
+            Toast.makeText(this,"Nenhum nome atribuido",Toast.LENGTH_LONG);
+            return;
+        }
         ArrayList<String> names = new ArrayList<>();
-        //adicionar os player que tem nome diferente de "Name"
         for( EditText text : list ) {
             String name = String.valueOf(text.getText());
             if (!name.equals(""))

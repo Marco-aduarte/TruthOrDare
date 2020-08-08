@@ -118,23 +118,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+
+    <ImageButton
+        android:id="@+id/drinkButton"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:layout_marginBottom="28dp"
-        android:text="Button"
+        android:background="@drawable/frame_00"
         app:layout_constraintBottom_toTopOf="@+id/nextRound"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/cup_fill_4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="473dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
