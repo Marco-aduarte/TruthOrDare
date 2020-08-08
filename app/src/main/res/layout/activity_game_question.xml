@@ -97,7 +97,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/buttonPopup_question"
         android:layout_width="27dp"
         android:layout_height="27dp"
         android:layout_marginStart="8dp"

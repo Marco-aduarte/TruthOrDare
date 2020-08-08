@@ -1,11 +1,16 @@
 package com.app.truthordare;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,7 +33,7 @@ import java.util.Scanner;
 public class Game_Option extends Activity {
 
     private final String file = "color.txt";
-    private Button truth, dare, add;
+    private Button truth, dare, add, back;
     private String mode=null;
     private TextView player;
     private ImageView image;
@@ -55,6 +60,7 @@ public class Game_Option extends Activity {
         player=findViewById(R.id.currentPlayer);
         add=findViewById(R.id.addOption);
         Button add2 = findViewById(R.id.add2Option);
+        back=findViewById(R.id.buttonPopup_option);
 
         updatePlayerView();
 
@@ -71,6 +77,36 @@ public class Game_Option extends Activity {
         dare.setOnClickListener(v -> startGameQuestion(v, "Dare"));
         add.setOnClickListener(v -> forfeitRound());
         add2.setOnClickListener(v -> forfeitRound());
+        back.setOnClickListener(v -> showPopUp());
+    }
+
+    private void showPopUp() {
+        AlertDialog.Builder popup = new AlertDialog.Builder(this, R.style.AlertDialogTheme);
+        View view = LayoutInflater.from(this).inflate(R.layout.popup_window, findViewById(R.id.layoutDialog));
+        //popup.setView(R.layout.popup_window);
+        popup.setView(view);
+
+        AlertDialog alertDialog = popup.create();
+        view.findViewById(R.id.yes).setOnClickListener(v -> {}/*//TODO: Vai parar ao scoreBoard*/);
+        view.findViewById(R.id.no).setOnClickListener(v -> alertDialog.dismiss());
+
+        Window window = alertDialog.getWindow();
+        int width = 251;
+        int height = 182;
+        if(window != null) {
+            window.setBackgroundDrawable(getDrawable(R.drawable.popup_style));
+            setPosition(window);
+            window.setLayout(width,height);
+        }
+        alertDialog.show();
+    }
+
+    private void setPosition(Window window) {
+        int height = 282;
+        WindowManager.LayoutParams param = window.getAttributes();
+        param.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
+        param.y = height;
+        window.setAttributes(param);
     }
 
     //TODO: forfeit round -> passa para o proximo player sem dar pontos, avança game_option

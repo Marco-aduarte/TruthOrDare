@@ -2,6 +2,7 @@ package com.app.truthordare;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
@@ -9,8 +10,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -35,7 +40,7 @@ public class Game_Question extends Activity {
     private final String file = "color.txt";
     private String mode=null, option;
     private TextView txt, title;
-    private Button next, add, add2;
+    private Button next, add, add2, back;
     private ImageButton drink;
     private ImageView image;
     private PlayerScore playerScore;
@@ -65,6 +70,7 @@ public class Game_Question extends Activity {
         add = findViewById(R.id.addQuestion);
         add2 = findViewById(R.id.add2Question);
         drink = findViewById(R.id.drinkButton);
+        back = findViewById(R.id.buttonPopup_question);
 
         Phrases phrases = new Phrases();
         Actions actions = null;
@@ -100,7 +106,7 @@ public class Game_Question extends Activity {
                     if(!isRunning) {
                         runningBeer.start();
                         isRunning=true;
-                        if (mHandler != null) return true;
+                        if (mHandler != null) return false;
                         mHandler = new Handler();
                         mHandler.postDelayed(mAction, 1200);
                     }
@@ -111,7 +117,7 @@ public class Game_Question extends Activity {
                     drink.setImageResource(R.drawable.frame_00);
                     return true;
                 }
-                return true;
+                return false;
             }
 
             Runnable mAction = new Runnable() {
@@ -121,6 +127,38 @@ public class Game_Question extends Activity {
                 }
             };
         });
+
+        back.setOnClickListener(v -> showPopUp());
+
+    }
+
+    private void showPopUp() {
+        AlertDialog.Builder popup = new AlertDialog.Builder(this, R.style.AlertDialogTheme);
+        View view = LayoutInflater.from(this).inflate(R.layout.popup_window, findViewById(R.id.layoutDialog));
+        //popup.setView(R.layout.popup_window);
+        popup.setView(view);
+
+        AlertDialog alertDialog = popup.create();
+        view.findViewById(R.id.yes).setOnClickListener(v -> {}/*//TODO: Vai parar ao scoreBoard*/);
+        view.findViewById(R.id.no).setOnClickListener(v -> alertDialog.dismiss());
+
+        Window window = alertDialog.getWindow();
+        int width = 251;
+        int height = 182;
+        if(window != null) {
+            window.setBackgroundDrawable(getDrawable(R.drawable.popup_style));
+            setPosition(window);
+            window.setLayout(width,height);
+        }
+        alertDialog.show();
+    }
+
+    private void setPosition(Window window) {
+        int height = 282;
+        WindowManager.LayoutParams param = window.getAttributes();
+        param.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
+        param.y = height;
+        window.setAttributes(param);
     }
 
     //TODO: forfeit round -> passa para o proximo player sem dar pontos, avança game_option

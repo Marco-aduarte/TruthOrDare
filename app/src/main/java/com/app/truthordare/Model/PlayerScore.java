@@ -2,6 +2,7 @@ package com.app.truthordare.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 @org.parceler.Parcel
@@ -19,6 +20,7 @@ public class PlayerScore implements Parcelable {
         this.rounds = rounds;
     }
 
+    public boolean isEmpty(ArrayList<String> list){ return list.size()==0; }
 
     protected PlayerScore(Parcel in) {
         current_player = in.readInt();
@@ -64,7 +66,7 @@ public class PlayerScore implements Parcelable {
     }
 
     private boolean less(Player x, Player y){
-        return x.get_score() < y.get_score();
+        return Integer.parseInt(x.get_score()) < Integer.parseInt(y.get_score());
     }
 
     public ArrayList<Player> sort_players() {
