@@ -9,46 +9,61 @@
     tools:context=".GameRecords">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
         android:text="Scoreboard"
+        android:textAlignment="center"
         android:textAllCaps="false"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="19dp" />
+        android:textColor="#FFFFFF"
+        android:textSize="33sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/rank"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="6dp"
         android:background="@drawable/records_style"
-        android:text="1º"
-        android:textSize="25dp"
         android:gravity="center"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="110dp" />
+        android:text="1.º"
+        android:textColor="#212738"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
 
     <TextView
         android:id="@+id/name"
         android:layout_width="242dp"
         android:layout_height="40dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="43dp"
         android:background="@drawable/records_style"
-        android:text="Name"
-        android:textSize="25dp"
         android:gravity="left"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="111dp" />
+        android:text="Name"
+        android:textColor="#212738"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/points"
-        android:layout_width="242dp"
-        android:layout_height="40dp"
-        android:text="0 pts"
-        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="14dp"
         android:gravity="right"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="110dp" />
-
-
+        android:text="0 pts"
+        android:textColor="#212738"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name" />
 
     <Button
         android:id="@+id/button9"
