@@ -7,8 +7,10 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.InputFilter;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
@@ -27,10 +29,11 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 //TODO: Adicionar rondas
+//TODO: FELIX!! Resolver o layout. Alguns constrains nao estão bem. Imagens e scrollview...
 public class Players_Activity extends Activity {
     private final String file = "color.txt";
     public static final String PLAYER = "com.app.truthordare.PLAYER", ARRAY = "com.app.truthordare.ARRAY";
-    private Button begin, add, add2, back;
+    private Button begin, add, add2, back, rules, drinkMode, rounds;
     private String mode;
     private LinearLayout layout;
     private ScrollView scroll;
@@ -38,6 +41,8 @@ public class Players_Activity extends Activity {
     private PlayerScore playerScore;
     private Parcelable parcelable;
     private FloatingActionButton f1,f2;
+    private ImageView drinkImg;
+    private boolean flag, menuIsOpen;
 
 
     @Override
@@ -51,27 +56,62 @@ public class Players_Activity extends Activity {
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.playersView);
         view.setBackgroundColor(Color.parseColor(color));
+
         begin=findViewById(R.id.begin);
         add = findViewById(R.id.add);
         add2 = findViewById(R.id.add2);
         scroll=findViewById(R.id.players);
         back = findViewById(R.id.back_players);
+        rules = findViewById(R.id.rules);
+        drinkMode = findViewById(R.id.drinkMode);
+        rounds= findViewById(R.id.roundsButton);
+        drinkImg = findViewById(R.id.drinkActivate);
 
         //TODO: Mudar o parâmetro
-        //TODO: Mudar o codigo do PlayScore para admitir rondas infinitas
+        //TODO: DUARTEAFONSO Mudar o codigo do PlayScore para admitir rondas infinitas
         playerScore = new PlayerScore(50);
         parcelable = Parcels.wrap(playerScore);
 
-        begin.setOnClickListener(v -> startGame());
+
+
+        menuIsOpen=false;
+        flag=false;
+        drinkImg.setVisibility(View.INVISIBLE);
 
         layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
 
         init();
 
+        begin.setOnClickListener(v -> startGame());
         add.setOnClickListener(v -> addEditText());
         add2.setOnClickListener(v -> addEditText());
         back.setOnClickListener(v -> goBack());
+
+        rules.setOnClickListener(v -> menu());
+        drinkMode.setOnClickListener(v -> drinkMode());
+        rounds.setOnClickListener(v -> updateRounds());
+    }
+
+    private void menu() {
+        if(!menuIsOpen) {
+            drinkMode.setVisibility(View.VISIBLE);
+            rounds.setVisibility(View.VISIBLE);
+        }else{
+            drinkMode.setVisibility(View.INVISIBLE);
+            rounds.setVisibility(View.INVISIBLE);
+        }
+        menuIsOpen=!menuIsOpen;
+    }
+
+    private void updateRounds() {
+        //TODO:
+    }
+
+    private void drinkMode() {
+        if(flag) drinkImg.setVisibility(View.INVISIBLE);
+        else drinkImg.setVisibility(View.VISIBLE);
+        flag=!flag;
     }
 
     private void goBack() {
