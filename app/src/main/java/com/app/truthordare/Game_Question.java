@@ -137,6 +137,9 @@ public class Game_Question extends Activity {
 
     private void goRecords() {
         Intent records = new Intent(this, GameRecords.class);
+        records.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
+        records.putExtra(Players_Activity.PLAYER, parcelable);
+        records.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
         startActivity(records);
     }
 

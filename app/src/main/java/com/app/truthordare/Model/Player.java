@@ -32,8 +32,8 @@ public class Player implements Parcelable {
         score++;
     }
 
-    public String get_score(){
-        return score +" pts";
+    public int get_score(){
+        return score;
     }
 
     public String getName(){
