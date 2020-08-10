@@ -40,7 +40,7 @@ public class Game_Question extends Activity {
     private final String file = "color.txt";
     private String mode=null, option;
     private TextView txt, title;
-    private Button next, add, add2, back;
+    private Button next, add, add2, back, settings;
     private ImageButton drink;
     private ImageView image;
     private PlayerScore playerScore;
@@ -71,6 +71,7 @@ public class Game_Question extends Activity {
         add2 = findViewById(R.id.add2Question);
         drink = findViewById(R.id.drinkButton);
         back = findViewById(R.id.buttonPopup_question);
+        settings = findViewById(R.id.settings);
 
         Phrases phrases = new Phrases();
         Actions actions = null;
@@ -130,6 +131,16 @@ public class Game_Question extends Activity {
 
         back.setOnClickListener(v -> showPopUp());
 
+        //Mudar. só para debug
+        settings.setOnClickListener(v -> goRecords());
+    }
+
+    private void goRecords() {
+        Intent records = new Intent(this, GameRecords.class);
+        records.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
+        records.putExtra(Players_Activity.PLAYER, parcelable);
+        records.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
+        startActivity(records);
     }
 
     private void showPopUp() {
