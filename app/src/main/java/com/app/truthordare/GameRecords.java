@@ -48,10 +48,7 @@ public class GameRecords extends Activity {
         //lista de players. ver o size e adicionar tantos quanto o size
         textViews = new LinkedList<>();
 
-
-
         createRank();
-
     }
 
     private void createRank() {
@@ -138,6 +135,4 @@ public class GameRecords extends Activity {
         }
         return color;
     }
-
-
 }
