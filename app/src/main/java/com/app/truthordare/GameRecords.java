@@ -8,23 +8,17 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.Gravity;
 import android.widget.TextView;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
-
 import com.app.truthordare.Model.Player;
 import com.app.truthordare.Model.PlayerScore;
-
 import org.parceler.Parcels;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-
-//TODO: Fazer layout
 public class GameRecords extends Activity {
 
     private static int NAME = 1000, NUMBER = 1101, POINTS=1202;
