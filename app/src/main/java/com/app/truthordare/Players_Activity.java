@@ -28,11 +28,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-//TODO: Adicionar rondas
-//TODO: FELIX!! Resolver o layout. Alguns constrains nao estão bem. Imagens e scrollview...
 public class Players_Activity extends Activity {
     private final String file = "color.txt";
-    public static final String PLAYER = "com.app.truthordare.PLAYER", ARRAY = "com.app.truthordare.ARRAY";
+    public static final String PLAYER = "com.app.truthordare.PLAYER", ARRAY = "com.app.truthordare.ARRAY", FLAG = "com.app.truthordare.FLAG";
     private Button begin, add, add2, back, rules, drinkMode, rounds;
     private TextView roundText;
     private String mode;
@@ -70,10 +68,7 @@ public class Players_Activity extends Activity {
         roundText = findViewById(R.id.roundsNumber);
         infiniteImg = findViewById(R.id.imageView2);
 
-        //TODO: Mudar o parâmetro
-        playerScore = new PlayerScore(50);
-        parcelable = Parcels.wrap(playerScore);
-
+        infiniteImg.setVisibility(View.VISIBLE);
         menuIsOpen=false;
         flag=false;
         drinkImg.setVisibility(View.INVISIBLE);
@@ -174,11 +169,16 @@ public class Players_Activity extends Activity {
         Intent game = new Intent(this, Game_Option.class);
         game.putExtra(MainActivity.MODE, mode);
         game.putExtra(PLAYER,parcelable);
+        game.putExtra(FLAG, flag);
         game.putParcelableArrayListExtra(ARRAY,playerScore.getArray());
         startActivity(game);
     }
 
     private boolean savePlayers() {
+        if(value==0) value = -1;
+        playerScore = new PlayerScore(value);
+        parcelable = Parcels.wrap(playerScore);
+
         ArrayList<String> names = new ArrayList<>();
         for( EditText text : list ) {
             String name = String.valueOf(text.getText());
