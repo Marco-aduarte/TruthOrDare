@@ -47,6 +47,50 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/rules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="#ffffff"
+        android:text="Rules"
+        android:textAllCaps="false"
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/drinkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="#ffffff"
+        android:text="Mode"
+        android:textAllCaps="false"
+        android:visibility="invisible"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rules" />
+
+    <Button
+        android:id="@+id/roundsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="#ffffff"
+        android:text="Rounds"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drinkMode" />
+
+
+    <!--
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
@@ -86,9 +130,10 @@
             app:fab_colorPressed="@android:color/transparent"
             app:fab_colorNormal="@android:color/transparent"
             app:fab_shadowColor="@android:color/transparent"
-            app:fab_label="Rounds" />
+           app:fab_label="Rounds" />
 
     </com.github.clans.fab.FloatingActionMenu>
+-->
 
     <ImageView
         android:id="@+id/imageView2"
@@ -101,15 +146,24 @@
         tools:src="@mipmap/infinity_128" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/drinkActivate"
         android:layout_width="31dp"
         android:layout_height="31dp"
-        android:src="@drawable/frame_00"
+        android:src="@drawable/frame_35"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
+    <TextView
+        android:id="@+id/roundsNumber"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/begin"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <ScrollView
         android:id="@+id/players"
@@ -120,7 +174,9 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton">
+        app:layout_constraintTop_toBottomOf="@+id/roundsButton" >
+        <!--app:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
+        -->
 
     </ScrollView>
 

@@ -54,7 +54,7 @@ public class PlayerScore implements Parcelable {
             current_player = 0;
             current_round++;
         }
-        if(current_round > rounds)
+        if(rounds !=-1 && current_round > rounds)
             return null;
         return playersArray.get(current_player++);
     }
@@ -66,7 +66,7 @@ public class PlayerScore implements Parcelable {
     }
 
     private boolean less(Player x, Player y){
-        return Integer.parseInt(x.get_score()) < Integer.parseInt(y.get_score());
+        return x.get_score() < y.get_score();
     }
 
     public ArrayList<Player> sort_players() {
