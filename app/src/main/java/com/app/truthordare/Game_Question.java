@@ -84,7 +84,7 @@ public class Game_Question extends Activity {
         txt.setText(getQuestion(actions));
         title.setText("It's a " + option + "!");
 
-        //TODO: Fazer debug no nextRound (get_current_player)
+        //TODO: Fazer debug no nextRound(get_current_player)
         next.setOnClickListener(v -> {
             playerScore.get_current_player().add_score();
             nextRound();
@@ -131,7 +131,7 @@ public class Game_Question extends Activity {
         back.setOnClickListener(v -> showPopUp());
 
         //Mudar. só para debug
-        settings.setOnClickListener(v -> goRecords());
+        //settings.setOnClickListener(v -> goRecords());
     }
 
     private void goRecords() {
@@ -149,7 +149,7 @@ public class Game_Question extends Activity {
         popup.setView(view);
 
         AlertDialog alertDialog = popup.create();
-        view.findViewById(R.id.yes).setOnClickListener(v -> {}/*//TODO: Vai parar ao scoreBoard*/);
+        view.findViewById(R.id.yes).setOnClickListener(v -> goRecords());
         view.findViewById(R.id.no).setOnClickListener(v -> alertDialog.dismiss());
 
         Window window = alertDialog.getWindow();

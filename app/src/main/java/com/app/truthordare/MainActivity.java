@@ -11,17 +11,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 
 public class MainActivity extends Activity {
-    /*
-
-    [0] [fgrt] [gewrgth]
-    [1] [AFG]
-    [2] [dsfh]
-
-
-    [2] [dsfh]
-
-     */
-
     private Button casual, party, dirty;
     private final String file = "color.txt";
     public static final String MODE = "com.app.truthordare.MODE";
@@ -40,7 +29,6 @@ public class MainActivity extends Activity {
         dirty.setOnClickListener(v -> startDirty(v));
 
     }
-
 
     private void startDirty(View v) {
         Intent dirty = new Intent(this, Players_Activity.class);
