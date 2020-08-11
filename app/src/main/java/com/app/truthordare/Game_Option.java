@@ -87,7 +87,7 @@ public class Game_Option extends Activity {
         popup.setView(view);
 
         AlertDialog alertDialog = popup.create();
-        view.findViewById(R.id.yes).setOnClickListener(v -> {}/*//TODO: Vai parar ao scoreBoard*/);
+        view.findViewById(R.id.yes).setOnClickListener(v -> goRecords());
         view.findViewById(R.id.no).setOnClickListener(v -> alertDialog.dismiss());
 
         Window window = alertDialog.getWindow();
@@ -99,6 +99,14 @@ public class Game_Option extends Activity {
             window.setLayout(width,height);
         }
         alertDialog.show();
+    }
+
+    private void goRecords() {
+        Intent records = new Intent(this, GameRecords.class);
+        records.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
+        records.putExtra(Players_Activity.PLAYER, parcelable);
+        records.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
+        startActivity(records);
     }
 
     private void setPosition(Window window) {
