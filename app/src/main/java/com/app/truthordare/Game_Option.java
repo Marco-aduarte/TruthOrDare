@@ -33,7 +33,7 @@ import java.util.Scanner;
 public class Game_Option extends Activity {
 
     private final String file = "color.txt";
-    private Button truth, dare, add, back;
+    private Button truth, dare, forfeitRound, back;
     private String mode=null;
     private TextView player;
     private ImageView image;
@@ -58,8 +58,8 @@ public class Game_Option extends Activity {
         dare=findViewById(R.id.dare);
         image = findViewById(R.id.Imagemoji_option);
         player=findViewById(R.id.currentPlayer);
-        add=findViewById(R.id.addOption);
-        Button add2 = findViewById(R.id.add2Option);
+        forfeitRound =findViewById(R.id.addOption);
+        Button forfeitRound2 = findViewById(R.id.add2Option);
         back=findViewById(R.id.buttonPopup_option);
 
         updatePlayerView();
@@ -75,8 +75,8 @@ public class Game_Option extends Activity {
 
         truth.setOnClickListener(v -> startGameQuestion(v, "Truth"));
         dare.setOnClickListener(v -> startGameQuestion(v, "Dare"));
-        add.setOnClickListener(v -> forfeitRound());
-        add2.setOnClickListener(v -> forfeitRound());
+        forfeitRound.setOnClickListener(v -> forfeitRound());
+        forfeitRound2.setOnClickListener(v -> forfeitRound());
         back.setOnClickListener(v -> showPopUp());
     }
 

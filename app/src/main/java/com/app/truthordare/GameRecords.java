@@ -67,7 +67,7 @@ public class GameRecords extends Activity {
             textViews.add(name);
             TextView previous= textViews.remove(0);
             createName(name, drawable, p.getName(), previous);
-            createNumber(number, position, drawable);
+            createNumber(number, ++position, drawable);
             createPoints(points ,drawable, String.format("%d pts", p.get_score()), previous);
         }
     }
@@ -95,7 +95,7 @@ public class GameRecords extends Activity {
     }
 
     private void createNumber(TextView txt, int position, Drawable drawable) {
-        setLayout(txt,104, 104, new StringBuilder().append(++position).append("º").toString(), NUMBER++, drawable, Gravity.CENTER,25);
+        setLayout(txt,107, 107, new StringBuilder().append(position).append("º").toString(), NUMBER++, drawable, Gravity.CENTER,25);
         view.addView(txt);
         //{(cima) nome (parte de cima) (20 de margem)
         // (direita) nome (esquerda) (6 de margem)

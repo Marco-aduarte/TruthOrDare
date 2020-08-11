@@ -40,7 +40,7 @@ public class Game_Question extends Activity {
     private final String file = "color.txt";
     private String mode=null, option;
     private TextView txt, title;
-    private Button next, add, add2, back, settings;
+    private Button next, forfeitButton, forfeitRound2, back, settings;
     private ImageButton drink;
     private ImageView image;
     private PlayerScore playerScore;
@@ -67,8 +67,8 @@ public class Game_Question extends Activity {
         title = findViewById(R.id.option);
         next = findViewById(R.id.nextRound);
         image = findViewById(R.id.Imagemoji_question);
-        add = findViewById(R.id.addQuestion);
-        add2 = findViewById(R.id.add2Question);
+        forfeitButton = findViewById(R.id.addQuestion);
+        forfeitRound2 = findViewById(R.id.add2Question);
         drink = findViewById(R.id.drinkButton);
         back = findViewById(R.id.buttonPopup_question);
         settings = findViewById(R.id.settings);
@@ -85,14 +85,13 @@ public class Game_Question extends Activity {
         title.setText("It's a " + option + "!");
 
         //TODO: Fazer debug no nextRound (get_current_player)
-
-
         next.setOnClickListener(v -> {
             playerScore.get_current_player().add_score();
             nextRound();
         });
-        add.setOnClickListener(v -> forfeitRound());
-        add2.setOnClickListener(v -> forfeitRound());
+
+        forfeitButton.setOnClickListener(v -> forfeitRound());
+        forfeitRound2.setOnClickListener(v -> forfeitRound());
 
         drink.setOnTouchListener(new View.OnTouchListener() {
             private Handler mHandler;
@@ -155,7 +154,7 @@ public class Game_Question extends Activity {
 
         Window window = alertDialog.getWindow();
         int width = 251;
-        int height = 182;
+        int height = 282;
         if(window != null) {
             window.setBackgroundDrawable(getDrawable(R.drawable.popup_style));
             setPosition(window);
