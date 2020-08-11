@@ -1,53 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_margin="100dp"
-    android:padding="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutDialog"
-    android:background="@drawable/popup_style">
+    android:layout_width="251dp"
+    android:layout_height="182dp"
+    android:background="@drawable/popup_style" >
+
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:fontFamily="@font/lato_bold"
+        android:gravity="center"
         android:text="End Game?"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="33dp"
-        android:fontFamily="@font/lato_bold"
-        android:gravity="center"/>
+        android:textSize="33sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/yes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="46dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/lato_bold"
+        android:text="Yes"
+        android:textAllCaps="false"
+        android:textSize="33dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-        <Button
-            android:id="@+id/yes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="63dp"
-            android:text="Yes"
-            android:textSize="33dp"
-            android:textAllCaps="false"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/lato_bold"
-            android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="46dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/lato_bold"
+        android:text="No"
+        android:textAllCaps="false"
+        android:textSize="33dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-        <Button
-            android:id="@+id/no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No"
-            android:textSize="33dp"
-            android:textAllCaps="false"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/lato_bold"
-            android:layout_gravity="center"/>
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
