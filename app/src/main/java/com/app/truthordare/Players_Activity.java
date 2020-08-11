@@ -42,7 +42,7 @@ public class Players_Activity extends Activity {
     private PlayerScore playerScore;
     private Parcelable parcelable;
     private int value=0;
-    private ImageView drinkImg;
+    private ImageView drinkImg, infiniteImg;
     private boolean flag, menuIsOpen;
 
 
@@ -68,6 +68,7 @@ public class Players_Activity extends Activity {
         rounds= findViewById(R.id.roundsButton);
         drinkImg = findViewById(R.id.drinkActivate);
         roundText = findViewById(R.id.roundsNumber);
+        infiniteImg = findViewById(R.id.imageView2);
 
         //TODO: Mudar o parâmetro
         playerScore = new PlayerScore(50);
@@ -106,10 +107,12 @@ public class Players_Activity extends Activity {
     private void updateRounds() {
         roundText.setVisibility(View.VISIBLE);
         if(value==30){
+            infiniteImg.setVisibility(View.VISIBLE);
             roundText.setVisibility(View.INVISIBLE);
             value=0;
         }
         else{
+            infiniteImg.setVisibility(View.INVISIBLE);
             value+=10;
             roundText.setText(String.valueOf(value));
         }
