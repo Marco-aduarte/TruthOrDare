@@ -13,12 +13,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.app.truthordare.Model.PlayerScore;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.parceler.Parcels;
 
@@ -34,13 +34,14 @@ public class Players_Activity extends Activity {
     private final String file = "color.txt";
     public static final String PLAYER = "com.app.truthordare.PLAYER", ARRAY = "com.app.truthordare.ARRAY";
     private Button begin, add, add2, back, rules, drinkMode, rounds;
+    private TextView roundText;
     private String mode;
     private LinearLayout layout;
     private ScrollView scroll;
     private LinkedList<EditText> list = new LinkedList<>();
     private PlayerScore playerScore;
     private Parcelable parcelable;
-    private FloatingActionButton f1,f2;
+    private int value=0;
     private ImageView drinkImg;
     private boolean flag, menuIsOpen;
 
@@ -66,13 +67,11 @@ public class Players_Activity extends Activity {
         drinkMode = findViewById(R.id.drinkMode);
         rounds= findViewById(R.id.roundsButton);
         drinkImg = findViewById(R.id.drinkActivate);
+        roundText = findViewById(R.id.roundsNumber);
 
         //TODO: Mudar o parâmetro
-        //TODO: DUARTEAFONSO Mudar o codigo do PlayScore para admitir rondas infinitas
         playerScore = new PlayerScore(50);
         parcelable = Parcels.wrap(playerScore);
-
-
 
         menuIsOpen=false;
         flag=false;
@@ -105,7 +104,15 @@ public class Players_Activity extends Activity {
     }
 
     private void updateRounds() {
-        //TODO:
+        roundText.setVisibility(View.VISIBLE);
+        if(value==30){
+            roundText.setVisibility(View.INVISIBLE);
+            value=0;
+        }
+        else{
+            value+=10;
+            roundText.setText(String.valueOf(value));
+        }
     }
 
     private void drinkMode() {

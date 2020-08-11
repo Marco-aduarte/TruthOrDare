@@ -156,11 +156,14 @@
 
     <TextView
         android:id="@+id/roundsNumber"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="43dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="53dp"
         app:layout_constraintBottom_toTopOf="@+id/begin"
-        android:visibility="visible"
+        android:visibility="invisible"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
