@@ -45,7 +45,7 @@ public class Game_Question extends Activity {
     private ImageView image;
     private PlayerScore playerScore;
     private Parcelable parcelable;
-    private boolean isRunning = false;
+    private boolean isRunning = false, flag;
     private long then=0;
 
     @SuppressLint("ClickableViewAccessibility")
@@ -59,10 +59,14 @@ public class Game_Question extends Activity {
         playerScore = Parcels.unwrap(parcelable);
         playerScore.setArray(intent.getParcelableArrayListExtra(Players_Activity.ARRAY));
         mode = intent.getStringExtra(MainActivity.MODE);
+        flag = intent.getBooleanExtra(Players_Activity.FLAG, false);
         option = intent.getStringExtra(Game_Option.OPTION);
+
+
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.game_question_view);
         view.setBackgroundColor(Color.parseColor(color));
+
         txt = findViewById(R.id.question);
         title = findViewById(R.id.option);
         next = findViewById(R.id.nextRound);
@@ -73,6 +77,7 @@ public class Game_Question extends Activity {
         back = findViewById(R.id.buttonPopup_question);
         settings = findViewById(R.id.settings);
 
+        gifVisibility();
         Phrases phrases = new Phrases();
         Actions actions = null;
         try {
@@ -122,8 +127,10 @@ public class Game_Question extends Activity {
 
             Runnable mAction = new Runnable() {
                 @Override public void run() {
-                    if (isRunning)
+                    if (isRunning) {
+                        playerScore.get_current_player().add_score();
                         nextRound();
+                    }
                 }
             };
         });
@@ -132,6 +139,11 @@ public class Game_Question extends Activity {
 
         //Mudar. só para debug
         //settings.setOnClickListener(v -> goRecords());
+    }
+
+    private void gifVisibility() {
+        if(flag) drink.setVisibility(View.VISIBLE);
+        else drink.setVisibility(View.INVISIBLE);
     }
 
     private void goRecords() {

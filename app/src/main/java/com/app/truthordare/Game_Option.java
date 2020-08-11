@@ -39,6 +39,7 @@ public class Game_Option extends Activity {
     private ImageView image;
     private PlayerScore playerScore;
     private Parcelable parcelable;
+    private boolean flag;
     public static final String OPTION = "com.app.truthordare.OPTION";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class Game_Option extends Activity {
         Intent intent = getIntent();
         parcelable = intent.getParcelableExtra(Players_Activity.PLAYER);
         playerScore = Parcels.unwrap(parcelable);
+        flag = intent.getBooleanExtra(Players_Activity.FLAG, false);
         playerScore.setArray(intent.getParcelableArrayListExtra(Players_Activity.ARRAY));
         mode = intent.getStringExtra(MainActivity.MODE);
 
@@ -127,6 +129,7 @@ public class Game_Option extends Activity {
     private void startGameQuestion(View v, String option) {
         Intent question = new Intent(this,Game_Question.class);
         question.putExtra(OPTION,option);
+        question.putExtra(Players_Activity.FLAG, flag);
         question.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
         question.putExtra(Players_Activity.PLAYER, parcelable);
         question.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
