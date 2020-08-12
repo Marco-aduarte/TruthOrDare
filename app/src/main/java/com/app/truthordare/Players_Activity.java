@@ -42,8 +42,7 @@ public class Players_Activity extends Activity {
     private int value=0;
     private ImageView drinkImg, infiniteImg;
     private boolean flag, menuIsOpen;
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
