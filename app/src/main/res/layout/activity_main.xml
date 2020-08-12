@@ -36,7 +36,7 @@
         android:layout_marginBottom="47dp"
         android:background="@drawable/button_casual"
         android:fontFamily="@font/lato_bold"
-        android:text="Casual"
+        android:text="@string/casual"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="33sp"
@@ -90,6 +90,49 @@
         app:barrierDirection="top" />
 
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="7dp"
+        android:background="@drawable/button_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/main_settings"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:foreground="@mipmap/settings"
+                app:backgroundTint="#ffffff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/main_language"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:backgroundTint="#ffffff"
+                android:foreground="@mipmap/portugal"
+                android:visibility="gone"
+                app:fabCustomSize="90dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/main_ads"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:background="@drawable/button_settings"
+                android:backgroundTint="#ffffff"
+                android:foreground="@mipmap/bloqueado"
+                android:visibility="gone"
+                app:fabCustomSize="90dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <!--
     <Button
         android:id="@+id/button9"
         android:layout_width="24dp"
@@ -100,6 +143,6 @@
         android:foreground="@mipmap/settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

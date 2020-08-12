@@ -46,7 +46,6 @@ public class Game_Question extends Activity {
     private PlayerScore playerScore;
     private Parcelable parcelable;
     private boolean isRunning = false, flag;
-    private long then=0;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -61,7 +60,6 @@ public class Game_Question extends Activity {
         mode = intent.getStringExtra(MainActivity.MODE);
         flag = intent.getBooleanExtra(Players_Activity.FLAG, false);
         option = intent.getStringExtra(Game_Option.OPTION);
-
 
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.game_question_view);
@@ -137,8 +135,8 @@ public class Game_Question extends Activity {
 
         back.setOnClickListener(v -> showPopUp());
 
-        //Mudar. só para debug
-        //settings.setOnClickListener(v -> goRecords());
+
+        settings.setOnClickListener(v -> {} );//TODO: layout settings
     }
 
     private void gifVisibility() {
@@ -157,7 +155,6 @@ public class Game_Question extends Activity {
     private void showPopUp() {
         AlertDialog.Builder popup = new AlertDialog.Builder(this, R.style.AlertDialogTheme);
         View view = LayoutInflater.from(this).inflate(R.layout.popup_window, findViewById(R.id.layoutDialog));
-        //popup.setView(R.layout.popup_window);
         popup.setView(view);
 
         AlertDialog alertDialog = popup.create();
@@ -183,7 +180,6 @@ public class Game_Question extends Activity {
         window.setAttributes(param);
     }
 
-    //TODO: forfeit round -> passa para o proximo player sem dar pontos, avança game_option
     private void forfeitRound() {
         nextRound();
     }
