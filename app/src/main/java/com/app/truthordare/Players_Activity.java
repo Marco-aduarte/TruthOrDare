@@ -93,8 +93,8 @@ public class Players_Activity extends Activity {
             drinkMode.setVisibility(View.VISIBLE);
             rounds.setVisibility(View.VISIBLE);
         }else{
-            drinkMode.setVisibility(View.INVISIBLE);
-            rounds.setVisibility(View.INVISIBLE);
+            drinkMode.setVisibility(View.GONE);
+            rounds.setVisibility(View.GONE);
         }
         menuIsOpen=!menuIsOpen;
     }

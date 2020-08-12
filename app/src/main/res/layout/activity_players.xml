@@ -71,7 +71,7 @@
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="15sp"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rules" />
@@ -86,7 +86,7 @@
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="15sp"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/drinkMode" />

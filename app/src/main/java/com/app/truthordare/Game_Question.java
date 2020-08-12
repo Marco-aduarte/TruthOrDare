@@ -135,8 +135,8 @@ public class Game_Question extends Activity {
 
         back.setOnClickListener(v -> showPopUp());
 
-        //Mudar. só para debug
-        //settings.setOnClickListener(v -> goRecords());
+
+        settings.setOnClickListener(v -> {} );//TODO: layout settings
     }
 
     private void gifVisibility() {
