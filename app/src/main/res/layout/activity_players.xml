@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/back_players"
         android:layout_width="27dp"
         android:layout_height="27dp"
         android:layout_marginStart="8dp"
@@ -47,50 +47,144 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/rules"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/transparent"
+        android:text="Rules"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/drinkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="18dp"
+        android:background="@android:color/transparent"
+        android:text="Drink Mode"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rules" />
+
+    <Button
+        android:id="@+id/roundsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:text="Rounds"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drinkMode" />
+
+
+    <!--
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/lato_bold"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu_fab_label="Rules"
+        app:menu_openDirection="down"
+        app:menu_labels_position="right"
+        app:menu_colorPressed="@android:color/transparent"
+        app:menu_colorNormal="@android:color/transparent"
+        app:menu_labels_textSize="17dp"
+        app:menu_labels_textColor="#ffffff"
+        app:menu_shadowColor="@android:color/transparent"
+        app:menu_fab_size="mini">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/floatingAction2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_colorPressed="@android:color/transparent"
+            app:fab_colorNormal="@android:color/transparent"
+            app:fab_shadowColor="@android:color/transparent"
+            app:fab_label="Drink Mode" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/floatingAction3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_colorPressed="@android:color/transparent"
+            app:fab_colorNormal="@android:color/transparent"
+            app:fab_shadowColor="@android:color/transparent"
+           app:fab_label="Rounds" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+-->
+
+
+
+    <ImageView
+        android:id="@+id/drinkActivate"
+        android:layout_width="31dp"
+        android:layout_height="31dp"
+        android:src="@drawable/frame_35"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/roundsNumber"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/begin"
+        android:visibility="invisible"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginBottom="43dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/begin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:src="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="31dp"
-        android:layout_height="31dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:src="@tools:sample/avatars" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="71dp"
-        android:clickable="true"
-        android:src="@drawable/back_and_settings_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        tools:src="@mipmap/infinity_128" />
 
     <ScrollView
         android:id="@+id/players"
         android:layout_width="241dp"
-        android:layout_height="374dp"
-
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="128dp"
-
-        android:layout_marginTop="19dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/drinkActivate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton">
-
+        app:layout_constraintTop_toBottomOf="@+id/roundsButton">
+        <!--app:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
+        -->
 
     </ScrollView>
 
@@ -109,11 +203,11 @@
         android:layout_width="96dp"
         android:layout_height="19dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="129dp"
+        android:layout_marginEnd="60dp"
         android:background="@android:color/transparent"
         android:text="Add Player"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/players"
         app:layout_constraintTop_toBottomOf="@+id/players"
         tools:ignore="DuplicateIds" />
 
