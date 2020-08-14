@@ -19,6 +19,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.app.truthordare.Model.Actions;
 import com.app.truthordare.Model.Phrases;
+import com.app.truthordare.Model.Player;
 import com.app.truthordare.Model.PlayerScore;
 
 import org.parceler.Parcels;
@@ -122,7 +123,12 @@ public class Game_Option extends Activity {
         updatePlayerView();
     }
 
-    private void updatePlayerView() { player.setText("It's "+playerScore.next_Player().getName()+"!"); }
+    private void updatePlayerView() {
+        Player p = playerScore.next_Player();
+        if(p == null)
+            goRecords();
+        else player.setText("It's "+p.getName()+"!");
+    }
 
     private void startGameQuestion(View v, String option) {
         Intent question = new Intent(this,Game_Question.class);

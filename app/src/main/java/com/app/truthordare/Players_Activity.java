@@ -42,7 +42,7 @@ public class Players_Activity extends Activity {
     private int value=0;
     private ImageView drinkImg, infiniteImg;
     private boolean flag, menuIsOpen;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -175,7 +175,7 @@ public class Players_Activity extends Activity {
 
     private boolean savePlayers() {
         if(value==0) value = -1;
-        playerScore = new PlayerScore(value);
+        playerScore = new PlayerScore(1);
         parcelable = Parcels.wrap(playerScore);
 
         ArrayList<String> names = new ArrayList<>();

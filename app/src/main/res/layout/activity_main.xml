@@ -91,19 +91,21 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="69dp"
         android:layout_marginEnd="7dp"
         android:background="@drawable/button_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
         android:orientation="vertical">
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/main_settings"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:foreground="@mipmap/settings"
+                android:layout_gravity="center"
                 app:backgroundTint="#ffffff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -114,6 +116,7 @@
                 android:layout_height="31dp"
                 android:backgroundTint="#ffffff"
                 android:foreground="@mipmap/portugal"
+                android:layout_gravity="center_horizontal"
                 android:visibility="gone"
                 app:fabCustomSize="90dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -124,6 +127,7 @@
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:background="@drawable/button_settings"
+                android:layout_gravity="center_horizontal"
                 android:backgroundTint="#ffffff"
                 android:foreground="@mipmap/bloqueado"
                 android:visibility="gone"
