@@ -19,6 +19,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.app.truthordare.Model.Actions;
 import com.app.truthordare.Model.Phrases;
+import com.app.truthordare.Model.Player;
 import com.app.truthordare.Model.PlayerScore;
 
 import org.parceler.Parcels;
@@ -31,7 +32,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game_Option extends Activity {
-
     private final String file = "color.txt";
     private Button truth, dare, forfeitRound, back;
     private String mode=null;
@@ -41,6 +41,7 @@ public class Game_Option extends Activity {
     private Parcelable parcelable;
     private boolean flag;
     public static final String OPTION = "com.app.truthordare.OPTION";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +86,6 @@ public class Game_Option extends Activity {
     private void showPopUp() {
         AlertDialog.Builder popup = new AlertDialog.Builder(this, R.style.AlertDialogTheme);
         View view = LayoutInflater.from(this).inflate(R.layout.popup_window, findViewById(R.id.layoutDialog));
-        //popup.setView(R.layout.popup_window);
         popup.setView(view);
 
         AlertDialog alertDialog = popup.create();
@@ -119,12 +119,16 @@ public class Game_Option extends Activity {
         window.setAttributes(param);
     }
 
-    //TODO: forfeit round -> passa para o proximo player sem dar pontos, avança game_option
     private void forfeitRound() {
         updatePlayerView();
     }
 
-    private void updatePlayerView() { player.setText("It's "+playerScore.next_Player().getName()+"!"); }
+    private void updatePlayerView() {
+        Player p = playerScore.next_Player();
+        if(p == null)
+            goRecords();
+        else player.setText("It's "+p.getName()+"!");
+    }
 
     private void startGameQuestion(View v, String option) {
         Intent question = new Intent(this,Game_Question.class);
@@ -153,10 +157,7 @@ public class Game_Option extends Activity {
     }
 
     private Object getArray(Phrases phrases, String option) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        //comparar o type e o método
         Method method = phrases.getClass().getMethod("get_"+mode+"_"+option);
         return method.invoke(phrases);
     }
-
-
 }

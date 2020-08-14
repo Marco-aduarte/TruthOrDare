@@ -43,7 +43,6 @@ public class Players_Activity extends Activity {
     private ImageView drinkImg, infiniteImg;
     private boolean flag, menuIsOpen;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,20 +92,21 @@ public class Players_Activity extends Activity {
             drinkMode.setVisibility(View.VISIBLE);
             rounds.setVisibility(View.VISIBLE);
         }else{
-            drinkMode.setVisibility(View.INVISIBLE);
-            rounds.setVisibility(View.INVISIBLE);
+            drinkMode.setVisibility(View.GONE);
+            rounds.setVisibility(View.GONE);
         }
         menuIsOpen=!menuIsOpen;
     }
 
     private void updateRounds() {
-        roundText.setVisibility(View.VISIBLE);
+
         if(value==30){
             infiniteImg.setVisibility(View.VISIBLE);
-            roundText.setVisibility(View.INVISIBLE);
+            roundText.setVisibility(View.GONE);
             value=0;
         }
         else{
+            roundText.setVisibility(View.VISIBLE);
             infiniteImg.setVisibility(View.INVISIBLE);
             value+=10;
             roundText.setText(String.valueOf(value));
@@ -176,7 +176,7 @@ public class Players_Activity extends Activity {
 
     private boolean savePlayers() {
         if(value==0) value = -1;
-        playerScore = new PlayerScore(value);
+        playerScore = new PlayerScore(1);
         parcelable = Parcels.wrap(playerScore);
 
         ArrayList<String> names = new ArrayList<>();

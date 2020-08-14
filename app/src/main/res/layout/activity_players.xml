@@ -27,25 +27,14 @@
 
     <Button
         android:id="@+id/back_players"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="45dp"
+        android:layout_height="34dp"
         android:layout_marginTop="67dp"
-        android:background="@drawable/back_and_settings_layout"
+        android:background="@drawable/button_back"
         android:foreground="@mipmap/back"
+        android:foregroundGravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="7dp"
-        android:background="@drawable/button_settings"
-        android:foreground="@mipmap/settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <Button
         android:id="@+id/rules"
@@ -71,7 +60,7 @@
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="15sp"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rules" />
@@ -86,7 +75,7 @@
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="15sp"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/drinkMode" />
@@ -167,11 +156,10 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginBottom="43dp"
-        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/begin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:src="@mipmap/infinity_128" />
+        android:src="@mipmap/infinity_128" />
 
     <ScrollView
         android:id="@+id/players"

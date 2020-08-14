@@ -40,13 +40,12 @@ public class Game_Question extends Activity {
     private final String file = "color.txt";
     private String mode=null, option;
     private TextView txt, title;
-    private Button next, forfeitButton, forfeitRound2, back, settings;
+    private Button next, forfeitButton, forfeitRound2, back;
     private ImageButton drink;
     private ImageView image;
     private PlayerScore playerScore;
     private Parcelable parcelable;
     private boolean isRunning = false, flag;
-    private long then=0;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -62,7 +61,6 @@ public class Game_Question extends Activity {
         flag = intent.getBooleanExtra(Players_Activity.FLAG, false);
         option = intent.getStringExtra(Game_Option.OPTION);
 
-
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.game_question_view);
         view.setBackgroundColor(Color.parseColor(color));
@@ -75,7 +73,6 @@ public class Game_Question extends Activity {
         forfeitRound2 = findViewById(R.id.add2Question);
         drink = findViewById(R.id.drinkButton);
         back = findViewById(R.id.buttonPopup_question);
-        settings = findViewById(R.id.settings);
 
         gifVisibility();
         Phrases phrases = new Phrases();
@@ -136,9 +133,6 @@ public class Game_Question extends Activity {
         });
 
         back.setOnClickListener(v -> showPopUp());
-
-        //Mudar. só para debug
-        //settings.setOnClickListener(v -> goRecords());
     }
 
     private void gifVisibility() {
@@ -157,7 +151,6 @@ public class Game_Question extends Activity {
     private void showPopUp() {
         AlertDialog.Builder popup = new AlertDialog.Builder(this, R.style.AlertDialogTheme);
         View view = LayoutInflater.from(this).inflate(R.layout.popup_window, findViewById(R.id.layoutDialog));
-        //popup.setView(R.layout.popup_window);
         popup.setView(view);
 
         AlertDialog alertDialog = popup.create();
@@ -183,7 +176,6 @@ public class Game_Question extends Activity {
         window.setAttributes(param);
     }
 
-    //TODO: forfeit round -> passa para o proximo player sem dar pontos, avança game_option
     private void forfeitRound() {
         nextRound();
     }
@@ -191,6 +183,7 @@ public class Game_Question extends Activity {
     private void nextRound() {
         Intent question = new Intent(this,Game_Option.class);
         question.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
+        question.putExtra(Players_Activity.FLAG, flag);
         question.putExtra(Players_Activity.PLAYER, parcelable);
         question.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
         startActivity(question);

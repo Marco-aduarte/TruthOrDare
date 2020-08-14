@@ -8,6 +8,23 @@
     android:id="@+id/game_records_view"
     tools:context=".GameRecords">
 
+    <Button
+        android:id="@+id/back"
+        android:layout_width="0dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/black_button"
+        android:fontFamily="@font/lato_bold"
+        android:text="GG's"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="33sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -22,26 +39,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/rank"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="6dp"
-        android:background="@drawable/records_style"
-        android:gravity="center"
-        android:text="1.º"
-        android:textColor="#212738"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toStartOf="@+id/name"
-        app:layout_constraintTop_toTopOf="@+id/name" />
+    <ScrollView
+        android:id="@+id/score_table"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/rank"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/records_style"
+            android:gravity="center"
+            android:text="1.º"
+            android:textColor="#212738"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/name" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="242dp"
         android:layout_height="40dp"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="56dp"
         android:layout_marginEnd="43dp"
         android:background="@drawable/records_style"
         android:gravity="left"
@@ -50,31 +81,24 @@
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/points"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="14dp"
-        android:gravity="right"
-        android:text="0 pts"
-        android:textColor="#212738"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/name"
-        app:layout_constraintTop_toTopOf="@+id/name" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="7dp"
-        android:background="@drawable/button_settings"
-        android:foreground="@mipmap/settings"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="14dp"
+            android:gravity="right"
+            android:text="0 pts"
+            android:textColor="#212738"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/name" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 
     <Button
         android:id="@+id/button"
