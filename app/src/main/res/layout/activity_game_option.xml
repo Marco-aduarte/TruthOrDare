@@ -86,8 +86,8 @@
 
     <Button
         android:id="@+id/buttonPopup_option"
-        android:layout_width="45dp"
-        android:layout_height="34dp"
+        android:layout_width="42dp"
+        android:layout_height="41dp"
         android:layout_marginTop="67dp"
         android:background="@drawable/button_back"
         android:foreground="@mipmap/back"
