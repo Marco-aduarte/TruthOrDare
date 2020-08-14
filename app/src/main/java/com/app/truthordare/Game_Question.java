@@ -26,6 +26,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.app.truthordare.Model.Actions;
 import com.app.truthordare.Model.Phrases;
 import com.app.truthordare.Model.PlayerScore;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.parceler.Parcels;
 
@@ -40,7 +41,8 @@ public class Game_Question extends Activity {
     private final String file = "color.txt";
     private String mode=null, option;
     private TextView txt, title;
-    private Button next, forfeitButton, forfeitRound2, back, settings;
+    private Button next, forfeitButton, forfeitRound2, back;
+    private FloatingActionButton settings;
     private ImageButton drink;
     private ImageView image;
     private PlayerScore playerScore;
@@ -73,7 +75,7 @@ public class Game_Question extends Activity {
         forfeitRound2 = findViewById(R.id.add2Question);
         drink = findViewById(R.id.drinkButton);
         back = findViewById(R.id.buttonPopup_question);
-        settings = findViewById(R.id.settings);
+        settings = findViewById(R.id.question_settings);
 
         gifVisibility();
         Phrases phrases = new Phrases();

@@ -8,6 +8,23 @@
     android:id="@+id/game_records_view"
     tools:context=".GameRecords">
 
+    <Button
+        android:id="@+id/nextRound2"
+        android:layout_width="0dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/black_button"
+        android:fontFamily="@font/lato_bold"
+        android:text="GG's"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="33sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -26,7 +43,7 @@
         android:id="@+id/rank"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/records_style"
         android:gravity="center"
         android:text="1.º"
@@ -66,6 +83,7 @@
         app:layout_constraintTop_toTopOf="@+id/name" />
 
     <LinearLayout
+        android:id="@+id/menu"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="69dp"
@@ -76,7 +94,7 @@
         android:gravity="center"
         android:orientation="vertical">
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/main_settings"
+            android:id="@+id/records_settings"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:foreground="@mipmap/settings"
@@ -86,7 +104,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/main_language"
+            android:id="@+id/records_language"
             android:layout_width="31dp"
             android:layout_height="31dp"
             android:backgroundTint="#ffffff"
@@ -98,7 +116,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/main_ads"
+            android:id="@+id/records_ads"
             android:layout_width="31dp"
             android:layout_height="31dp"
             android:background="@drawable/button_settings"
