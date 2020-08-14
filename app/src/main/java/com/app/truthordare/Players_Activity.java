@@ -99,7 +99,6 @@ public class Players_Activity extends Activity {
     }
 
     private void updateRounds() {
-
         if(value==30){
             infiniteImg.setVisibility(View.VISIBLE);
             roundText.setVisibility(View.GONE);
@@ -176,7 +175,7 @@ public class Players_Activity extends Activity {
 
     private boolean savePlayers() {
         if(value==0) value = -1;
-        playerScore = new PlayerScore(1);
+        playerScore = new PlayerScore(value);
         parcelable = Parcels.wrap(playerScore);
 
         ArrayList<String> names = new ArrayList<>();

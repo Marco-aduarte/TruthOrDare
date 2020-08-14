@@ -46,6 +46,7 @@ public class Game_Question extends Activity {
     private PlayerScore playerScore;
     private Parcelable parcelable;
     private boolean isRunning = false, flag;
+    private Actions actions;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -75,15 +76,25 @@ public class Game_Question extends Activity {
         back = findViewById(R.id.buttonPopup_question);
 
         gifVisibility();
+
         Phrases phrases = new Phrases();
-        Actions actions = null;
+
         try {
             actions = new Actions(((ArrayList<String>) getArray(phrases, "truth")), ((ArrayList<String>) getArray(phrases, "dare")), (ArrayList<Integer>) getEmojisArray(phrases));
             image.setImageResource(actions.get_emoji());
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
-        txt.setText(getQuestion(actions));
+
+        if(actions==null) {
+            try {
+                actions = new Actions(((ArrayList<String>) getArray(phrases, "truth")), ((ArrayList<String>) getArray(phrases, "dare")), (ArrayList<Integer>) getEmojisArray(phrases));
+            } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
+        txt.setText(getQuestion());
         title.setText("It's a " + option + "!");
 
         //TODO: Fazer debug no nextRound(get_current_player)
@@ -189,7 +200,7 @@ public class Game_Question extends Activity {
         startActivity(question);
     }
 
-    private String getQuestion(Actions actions) {
+    private String getQuestion() {
         if(option.equals("Truth")) return actions.get_truth();
         return actions.get_dare();
     }

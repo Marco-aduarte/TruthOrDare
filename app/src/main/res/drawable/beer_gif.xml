@@ -183,4 +183,21 @@
     <item android:drawable="@drawable/frame_59"
         android:duration="3"/>
 
+    <item android:drawable="@drawable/frame_60"
+        android:duration="3"/>
+
+    <item android:drawable="@drawable/frame_61"
+        android:duration="3"/>
+
+    <item android:drawable="@drawable/frame_62"
+        android:duration="3"/>
+
+    <item android:drawable="@drawable/frame_63"
+        android:duration="3"/>
+
+    <item android:drawable="@drawable/frame_64"
+        android:duration="3"/>
+
+
+
 </animation-list>
