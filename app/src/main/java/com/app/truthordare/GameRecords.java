@@ -7,12 +7,17 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.Gravity;
+import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
+
 import com.app.truthordare.Model.Player;
 import com.app.truthordare.Model.PlayerScore;
+
 import org.parceler.Parcels;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -25,11 +30,12 @@ public class GameRecords extends Activity {
     private final String file = "color.txt";
     private String mode=null;
     private PlayerScore playerScore;
-    private ConstraintLayout view;
+    private ConstraintLayout view, background;
     private Parcelable parcelable;
     private TextView nameTxt, rank;
     private LinkedList<TextView> textViews;
     private int width, height, rank_width, rank_height;
+    private Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +48,26 @@ public class GameRecords extends Activity {
         playerScore.setArray(intent.getParcelableArrayListExtra(Players_Activity.ARRAY));
         mode = intent.getStringExtra(MainActivity.MODE);
 
+        back = findViewById(R.id.back);
+
         String color = loadColor();
-        view = findViewById(R.id.game_records_view);
+        background = findViewById(R.id.game_records_view);
+        background.setBackgroundColor(Color.parseColor(color));
+
+        view = findViewById(R.id.scroll_view);
         view.setBackgroundColor(Color.parseColor(color));
 
         //lista de players. ver o size e adicionar tantos quanto o size
         textViews = new LinkedList<>();
 
         createRank();
+
+        back.setOnClickListener(v -> goMainActivity());
+    }
+
+    private void goMainActivity() {
+        Intent main = new Intent(this, MainActivity.class);
+        startActivity(main);
     }
 
     private void createRank() {
