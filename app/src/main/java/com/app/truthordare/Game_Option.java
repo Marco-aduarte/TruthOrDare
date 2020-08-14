@@ -127,7 +127,7 @@ public class Game_Option extends Activity {
         Player p = playerScore.next_Player();
         if(p == null)
             goRecords();
-        else player.setText("It's "+p.getName()+"!");
+        else player.setText("It's "+p.getName()+"'s turn!");
     }
 
     private void startGameQuestion(View v, String option) {
