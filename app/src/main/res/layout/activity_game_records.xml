@@ -9,7 +9,7 @@
     tools:context=".GameRecords">
 
     <Button
-        android:id="@+id/nextRound2"
+        android:id="@+id/back"
         android:layout_width="0dp"
         android:layout_height="83dp"
         android:layout_marginStart="39dp"
@@ -39,26 +39,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/rank"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/records_style"
-        android:gravity="center"
-        android:text="1.º"
-        android:textColor="#212738"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toStartOf="@+id/name"
-        app:layout_constraintTop_toTopOf="@+id/name" />
+    <ScrollView
+        android:id="@+id/score_table"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/rank"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/records_style"
+            android:gravity="center"
+            android:text="1.º"
+            android:textColor="#212738"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/name" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="242dp"
         android:layout_height="40dp"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="56dp"
         android:layout_marginEnd="43dp"
         android:background="@drawable/records_style"
         android:gravity="left"
@@ -67,66 +81,23 @@
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/points"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="14dp"
-        android:gravity="right"
-        android:text="0 pts"
-        android:textColor="#212738"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/name"
-        app:layout_constraintTop_toTopOf="@+id/name" />
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="14dp"
+            android:gravity="right"
+            android:text="0 pts"
+            android:textColor="#212738"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/name" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/menu"
-        android:layout_width="45dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="7dp"
-        android:background="@drawable/button_settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
-        android:orientation="vertical">
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/records_settings"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:foreground="@mipmap/settings"
-            android:layout_gravity="center"
-            app:backgroundTint="#ffffff"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    </ScrollView>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/records_language"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
-            android:backgroundTint="#ffffff"
-            android:foreground="@mipmap/portugal"
-            android:layout_gravity="center_horizontal"
-            android:visibility="gone"
-            app:fabCustomSize="90dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/records_ads"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
-            android:background="@drawable/button_settings"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="#ffffff"
-            android:foreground="@mipmap/bloqueado"
-            android:visibility="gone"
-            app:fabCustomSize="90dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

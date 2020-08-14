@@ -27,60 +27,15 @@
 
     <Button
         android:id="@+id/back_players"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="67dp"
-        android:background="@drawable/back_and_settings_layout"
-        android:foreground="@mipmap/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
         android:layout_width="45dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="7dp"
-        android:background="@drawable/button_settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
-        android:orientation="vertical">
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/players_settings"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:foreground="@mipmap/settings"
-            android:layout_gravity="center"
-            app:backgroundTint="#ffffff"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="34dp"
+        android:layout_marginTop="67dp"
+        android:background="@drawable/button_back"
+        android:foreground="@mipmap/back"
+        android:foregroundGravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/main_language"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
-            android:backgroundTint="#ffffff"
-            android:foreground="@mipmap/portugal"
-            android:layout_gravity="center_horizontal"
-            android:visibility="gone"
-            app:fabCustomSize="90dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/main_ads"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
-            android:background="@drawable/button_settings"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="#ffffff"
-            android:foreground="@mipmap/bloqueado"
-            android:visibility="gone"
-            app:fabCustomSize="90dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </LinearLayout>
     <Button
         android:id="@+id/rules"
         android:layout_width="wrap_content"
