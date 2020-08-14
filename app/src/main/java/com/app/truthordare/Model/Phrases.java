@@ -1,8 +1,6 @@
 package com.app.truthordare.Model;
 
 import com.app.truthordare.R;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 

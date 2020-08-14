@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
