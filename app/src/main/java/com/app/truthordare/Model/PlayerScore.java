@@ -65,7 +65,7 @@ public class PlayerScore implements Parcelable {
     }
 
     private boolean less(Player x, Player y){
-        return x.get_score() < y.get_score();
+        return x.get_score() < y.get_score() || (x.get_score() == y.get_score() && y.getName().compareTo(x.getName()) < 0);
     }
 
     public ArrayList<Player> sort_players() {

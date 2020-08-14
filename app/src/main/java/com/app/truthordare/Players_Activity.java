@@ -99,13 +99,14 @@ public class Players_Activity extends Activity {
     }
 
     private void updateRounds() {
-        roundText.setVisibility(View.VISIBLE);
+
         if(value==30){
             infiniteImg.setVisibility(View.VISIBLE);
-            roundText.setVisibility(View.INVISIBLE);
+            roundText.setVisibility(View.GONE);
             value=0;
         }
         else{
+            roundText.setVisibility(View.VISIBLE);
             infiniteImg.setVisibility(View.INVISIBLE);
             value+=10;
             roundText.setText(String.valueOf(value));
