@@ -7,4 +7,17 @@
     <string name="truth_or_dare">Truth or Dare</string>
     <string name="party">Party</string>
     <string name="dirty">Spicy</string>
+    <string name="rules">Rules</string>
+    <string name="drink_mode">Drink Mode</string>
+    <string name="rounds">Rounds</string>
+    <string name="add_player">Add Player</string>
+    <string name="let_s_begin">Let\'s Begin!</string>
+    <string name="truth">Truth!</string>
+    <string name="dare">Dare!</string>
+    <string name="forfeit_round">Forfeit Round</string>
+    <string name="next_round">Next Round</string>
+    <string name="gg_s">GG\'s</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="player_turn1">"It's "</string>
+    <string name="player_turn">\'s turn!</string>
 </resources>
