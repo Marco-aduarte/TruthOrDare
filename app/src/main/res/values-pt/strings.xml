@@ -7,4 +7,17 @@
     <string name="truth_or_dare">Truth or Dare</string>
     <string name="next">Próximo</string>
     <string name="previous">Anterior</string>
+    <string name="rules">Regras</string>
+    <string name="drink_mode">Modo Bebida</string>
+    <string name="rounds">Rondas</string>
+    <string name="add_player">Adicionar Jogador</string>
+    <string name="let_s_begin">Vamos começar!</string>
+    <string name="truth">Verdade!</string>
+    <string name="dare">Consequência!</string>
+    <string name="forfeit_round">Desistir da ronda</string>
+    <string name="next_round">Próxima Ronda</string>
+    <string name="gg_s">GG\'s</string>
+    <string name="scoreboard">Tabela de Resultados</string>
+    <string name="player_turn1">" "</string>
+    <string name="player_turn">, é a tua vez!</string>
 </resources>
