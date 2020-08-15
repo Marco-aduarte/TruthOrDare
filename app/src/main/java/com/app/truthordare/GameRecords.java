@@ -9,15 +9,11 @@ import android.os.Parcelable;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
-
 import com.app.truthordare.Model.Player;
 import com.app.truthordare.Model.PlayerScore;
-
 import org.parceler.Parcels;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -57,7 +53,6 @@ public class GameRecords extends Activity {
         view = findViewById(R.id.scroll_view);
         view.setBackgroundColor(Color.parseColor(color));
 
-        //lista de players. ver o size e adicionar tantos quanto o size
         textViews = new LinkedList<>();
 
         createRank();
