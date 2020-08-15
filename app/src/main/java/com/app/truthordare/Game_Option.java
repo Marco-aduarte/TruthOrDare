@@ -14,16 +14,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.app.truthordare.Model.Actions;
 import com.app.truthordare.Model.Phrases;
 import com.app.truthordare.Model.Player;
 import com.app.truthordare.Model.PlayerScore;
-
 import org.parceler.Parcels;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -34,7 +30,7 @@ import java.util.Scanner;
 public class Game_Option extends Activity {
     private final String file = "color.txt";
     private Button truth, dare, forfeitRound, back;
-    private String mode=null;
+    private String mode=null, language;
     private TextView player;
     private ImageView image;
     private PlayerScore playerScore;
@@ -53,6 +49,7 @@ public class Game_Option extends Activity {
         flag = intent.getBooleanExtra(Players_Activity.FLAG, false);
         playerScore.setArray(intent.getParcelableArrayListExtra(Players_Activity.ARRAY));
         mode = intent.getStringExtra(MainActivity.MODE);
+        language = intent.getStringExtra(MainActivity.LANGUAGE);
 
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.game_option_view);
@@ -137,6 +134,7 @@ public class Game_Option extends Activity {
         question.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
         question.putExtra(Players_Activity.PLAYER, parcelable);
         question.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
+        question.putExtra(MainActivity.LANGUAGE, language);
         startActivity(question);
     }
 
@@ -157,7 +155,7 @@ public class Game_Option extends Activity {
     }
 
     private Object getArray(Phrases phrases, String option) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Method method = phrases.getClass().getMethod("get_"+mode+"_"+option);
+        Method method = phrases.getClass().getMethod("get_"+mode+"_"+option+language); //_english or _portuguese
         return method.invoke(phrases);
     }
 }

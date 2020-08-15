@@ -15,13 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.app.truthordare.Model.PlayerScore;
-
 import org.parceler.Parcels;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -33,7 +29,7 @@ public class Players_Activity extends Activity {
     public static final String PLAYER = "com.app.truthordare.PLAYER", ARRAY = "com.app.truthordare.ARRAY", FLAG = "com.app.truthordare.FLAG";
     private Button begin, add, add2, back, rules, drinkMode, rounds;
     private TextView roundText;
-    private String mode;
+    private String mode, language;
     private LinearLayout layout;
     private ScrollView scroll;
     private LinkedList<EditText> list = new LinkedList<>();
@@ -50,6 +46,7 @@ public class Players_Activity extends Activity {
 
         Intent intent = getIntent();
         mode = intent.getStringExtra(MainActivity.MODE);
+        language = intent.getStringExtra(MainActivity.LANGUAGE);
 
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.playersView);
@@ -170,6 +167,7 @@ public class Players_Activity extends Activity {
         game.putExtra(PLAYER,parcelable);
         game.putExtra(FLAG, flag);
         game.putParcelableArrayListExtra(ARRAY,playerScore.getArray());
+        game.putExtra(MainActivity.LANGUAGE, language);
         startActivity(game);
     }
 

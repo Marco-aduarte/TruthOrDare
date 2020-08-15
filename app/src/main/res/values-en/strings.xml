@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TruthOrDare</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
     <string name="casual">Casual</string>
-    <string name="party">Festa</string>
-    <string name="dirty">Picante</string>
     <string name="truth_or_dare">Truth or Dare</string>
-    <string name="next">Próximo</string>
-    <string name="previous">Anterior</string>
+    <string name="party">Party</string>
+    <string name="dirty">Spicy</string>
 </resources>

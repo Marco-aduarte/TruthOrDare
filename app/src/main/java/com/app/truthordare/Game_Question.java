@@ -20,15 +20,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.app.truthordare.Model.Actions;
 import com.app.truthordare.Model.Phrases;
 import com.app.truthordare.Model.PlayerScore;
-
 import org.parceler.Parcels;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -38,7 +34,7 @@ import java.util.Scanner;
 public class Game_Question extends Activity {
 
     private final String file = "color.txt";
-    private String mode=null, option;
+    private String mode=null, option, language;
     private TextView txt, title;
     private Button next, forfeitButton, forfeitRound2, back;
     private ImageButton drink;
@@ -61,6 +57,8 @@ public class Game_Question extends Activity {
         mode = intent.getStringExtra(MainActivity.MODE);
         flag = intent.getBooleanExtra(Players_Activity.FLAG, false);
         option = intent.getStringExtra(Game_Option.OPTION);
+        language = intent.getStringExtra(MainActivity.LANGUAGE);
+
 
         String color = loadColor();
         ConstraintLayout view = findViewById(R.id.game_question_view);
@@ -97,7 +95,6 @@ public class Game_Question extends Activity {
         txt.setText(getQuestion());
         title.setText("It's a " + option + "!");
 
-        //TODO: Fazer debug no nextRound(get_current_player)
         next.setOnClickListener(v -> {
             playerScore.get_current_player().add_score();
             nextRound();
@@ -197,6 +194,7 @@ public class Game_Question extends Activity {
         question.putExtra(Players_Activity.FLAG, flag);
         question.putExtra(Players_Activity.PLAYER, parcelable);
         question.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
+        question.putExtra(MainActivity.LANGUAGE, language);
         startActivity(question);
     }
 
@@ -210,7 +208,7 @@ public class Game_Question extends Activity {
     }
 
     private Object getArray(Phrases phrases, String option) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        return phrases.getClass().getMethod("get_"+mode+"_"+option).invoke(phrases);
+        return phrases.getClass().getMethod("get_"+mode+"_"+option+language).invoke(phrases);
     }
 
     private String loadColor(){
