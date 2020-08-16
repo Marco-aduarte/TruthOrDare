@@ -19,4 +19,8 @@
     <string name="scoreboard">Scoreboard</string>
     <string name="player_turn">\'s turn!</string>
     <string name="player_turn1">\"It\'s \"</string>
+    <string name="question_option">\"It\'s a \"</string>
+    <string name="truth_question">Truth</string>
+    <string name="dare_question">Dare</string>
+    <string name="hint_name">Name</string>
 </resources>

@@ -20,4 +20,8 @@
     <string name="scoreboard">Tabela de Resultados</string>
     <string name="player_turn1">" "</string>
     <string name="player_turn">, é a tua vez!</string>
+    <string name="question_option">"É uma "</string>
+    <string name="truth_question">Verdade</string>
+    <string name="dare_question">Consequência</string>
+    <string name="hint_name">Nome</string>
 </resources>

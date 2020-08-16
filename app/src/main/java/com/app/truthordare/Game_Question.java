@@ -93,7 +93,12 @@ public class Game_Question extends Activity {
         }
 
         txt.setText(getQuestion());
-        title.setText("It's a " + option + "!");
+
+        String string;
+        if(option.equals("Truth")) string = getString(R.string.truth_question);
+        else string = getString(R.string.dare_question);
+
+        title.setText(getString(R.string.question_option) + string + "!");
 
         next.setOnClickListener(v -> {
             playerScore.get_current_player().add_score();

@@ -149,7 +149,7 @@ public class Players_Activity extends Activity {
     private void addEditText(){
         int maxLength = 12;
         EditText newText = new EditText(this);
-        newText.setHint("Name");
+        newText.setHint(getString(R.string.hint_name));
         newText.setHintTextColor(Color.WHITE);
         newText.setTypeface(Typeface.create("Lato",Typeface.BOLD));
         newText.setTextColor(Color.WHITE);
