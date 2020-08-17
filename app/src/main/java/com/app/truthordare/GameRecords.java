@@ -32,13 +32,14 @@ public class GameRecords extends Activity {
     private LinkedList<TextView> textViews;
     private int width, height, rank_width, rank_height;
     private Button back;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_records);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         parcelable = intent.getParcelableExtra(Players_Activity.PLAYER);
         playerScore = Parcels.unwrap(parcelable);
         playerScore.setArray(intent.getParcelableArrayListExtra(Players_Activity.ARRAY));
@@ -62,6 +63,7 @@ public class GameRecords extends Activity {
 
     private void goMainActivity() {
         Intent main = new Intent(this, MainActivity.class);
+        main.putExtra(MainActivity.FLAG, intent.getIntExtra(MainActivity.FLAG, 0));
         startActivity(main);
     }
 

@@ -43,6 +43,7 @@ public class Game_Question extends Activity {
     private Parcelable parcelable;
     private boolean isRunning = false, flag;
     private Actions actions;
+    Intent intent;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -50,7 +51,7 @@ public class Game_Question extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_question);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         parcelable = intent.getParcelableExtra(Players_Activity.PLAYER);
         playerScore = Parcels.unwrap(parcelable);
         playerScore.setArray(intent.getParcelableArrayListExtra(Players_Activity.ARRAY));
@@ -158,6 +159,7 @@ public class Game_Question extends Activity {
         records.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
         records.putExtra(Players_Activity.PLAYER, parcelable);
         records.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
+        records.putExtra(MainActivity.FLAG, intent.getIntExtra(MainActivity.FLAG, 0));
         startActivity(records);
     }
 
@@ -200,6 +202,7 @@ public class Game_Question extends Activity {
         question.putExtra(Players_Activity.PLAYER, parcelable);
         question.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
         question.putExtra(MainActivity.LANGUAGE, language);
+        question.putExtra(MainActivity.FLAG, intent.getIntExtra(MainActivity.FLAG, 0));
         startActivity(question);
     }
 

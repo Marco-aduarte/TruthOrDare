@@ -37,13 +37,14 @@ public class Game_Option extends Activity {
     private Parcelable parcelable;
     private boolean flag;
     public static final String OPTION = "com.app.truthordare.OPTION";
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_option);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         parcelable = intent.getParcelableExtra(Players_Activity.PLAYER);
         playerScore = Parcels.unwrap(parcelable);
         flag = intent.getBooleanExtra(Players_Activity.FLAG, false);
@@ -104,6 +105,7 @@ public class Game_Option extends Activity {
         Intent records = new Intent(this, GameRecords.class);
         records.putExtra(MainActivity.MODE,getIntent().getStringExtra(MainActivity.MODE));
         records.putExtra(Players_Activity.PLAYER, parcelable);
+        records.putExtra(MainActivity.FLAG, intent.getIntExtra(MainActivity.FLAG, 0));
         records.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
         startActivity(records);
     }
@@ -135,6 +137,7 @@ public class Game_Option extends Activity {
         question.putExtra(Players_Activity.PLAYER, parcelable);
         question.putParcelableArrayListExtra(Players_Activity.ARRAY,playerScore.getArray());
         question.putExtra(MainActivity.LANGUAGE, language);
+        question.putExtra(MainActivity.FLAG, intent.getIntExtra(MainActivity.FLAG, 0));
         startActivity(question);
     }
 

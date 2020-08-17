@@ -38,13 +38,14 @@ public class Players_Activity extends Activity {
     private int value=0;
     private ImageView drinkImg, infiniteImg;
     private boolean flag, menuIsOpen;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         mode = intent.getStringExtra(MainActivity.MODE);
         language = intent.getStringExtra(MainActivity.LANGUAGE);
 
@@ -117,6 +118,7 @@ public class Players_Activity extends Activity {
 
     private void goBack() {
         Intent main = new Intent(this, MainActivity.class);
+        main.putExtra(MainActivity.FLAG, intent.getIntExtra(MainActivity.FLAG, 0));
         startActivity(main);
     }
 
@@ -168,6 +170,7 @@ public class Players_Activity extends Activity {
         game.putExtra(FLAG, flag);
         game.putParcelableArrayListExtra(ARRAY,playerScore.getArray());
         game.putExtra(MainActivity.LANGUAGE, language);
+        game.putExtra(MainActivity.FLAG, intent.getIntExtra(MainActivity.FLAG, 0));
         startActivity(game);
     }
 

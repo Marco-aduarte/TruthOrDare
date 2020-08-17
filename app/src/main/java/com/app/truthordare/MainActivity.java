@@ -20,7 +20,7 @@ import java.util.Locale;
 public class MainActivity extends Activity {
     private Button casual, party, dirty;
     private final String file = "color.txt";
-    public static final String MODE = "com.app.truthordare.MODE", LANGUAGE = "com.app.truthordare.LANGUAGE", FLAG = "com.app.truthordare.FLAG";
+    public static final String MODE = "com.app.truthordare.MODE", LANGUAGE = "com.app.truthordare.LANGUAGE", FLAG = "com.app.truthordare.FLAG", LANGUAGE_MAIN = "com.app.truthordare.LANGUAGE_MAIN";
     private FloatingActionButton settings, language, ads;
     private Animation fab_open, fab_close, fabRClockwise, fabRAntiClockwise;
     private String idiom = "_english";
@@ -136,6 +136,7 @@ public class MainActivity extends Activity {
         saveColor(color);
         activity.putExtra(MODE, mode);
         activity.putExtra(LANGUAGE, idiom);
+        activity.putExtra(FLAG, flag);
         startActivity(activity);
     }
 
