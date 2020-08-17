@@ -139,27 +139,6 @@ public class MainActivity extends Activity {
         startActivity(activity);
     }
 
-    private void startDirty(View v) {
-        Intent dirty = new Intent(this, Players_Activity.class);
-        saveColor("#D1495B");
-        dirty.putExtra(MODE,"dirty");
-        startActivity(dirty);
-    }
-
-    private void startParty(View v) {
-        Intent party = new Intent(this, Players_Activity.class);
-        saveColor("#16DB93");
-        party.putExtra(MODE,"party");
-        startActivity(party);
-    }
-
-    private void startCasual(View v) {
-        Intent casual = new Intent(this, Players_Activity.class);
-        saveColor("#2E5EAA");
-        casual.putExtra(MODE,"casual");
-        startActivity(casual);
-    }
-
     private void saveColor(String color) {
         try (OutputStream os = openFileOutput(file,MODE_PRIVATE)){
             PrintWriter to = new PrintWriter(os);
